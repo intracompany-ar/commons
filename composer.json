@@ -1,0 +1,34 @@
+{
+    "name": "duxducisarsen/commons",
+    "description": "Herramientas comunes para demás sistemas",
+    "type": "library",
+    "version": "1.0",
+    "autoload": {
+        "psr-4": {
+            "DuxDucisArsen\\Commons\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alejandro Palarich",
+            "email": "duxducisarsen@gmail.com",
+            "role": "CEO"
+        }
+    ],
+    "support": {
+        "email": "duxducisarsen@gmail.com"
+    },
+    "require": {
+        "php": "^7.1||^7.2||^7.3||^8.0||^8.1"
+    },
+    "require-dev": {
+        "laravel/framework": "^9.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DuxDucisArsen\\Commons\\CommonsServiceProvider"
+            ]
+        }
+    }
+}    
