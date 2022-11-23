@@ -32,6 +32,6 @@ class TableStandard extends Component
      */
     public function render()
     {
-        return view('components.table-standard');
+        return view('commons::components.table-standard');
     }
 }
