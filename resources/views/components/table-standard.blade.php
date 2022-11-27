@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <table id="{{ $id }}" class="table table-sm table-hover table-bordered compact {{ $tableStriped }} {{ $datatable ? 'datatableauto' : '' }}"  width="100%" cellspacing="0" border="1">
+        <table id="{{ $id }}" class="table table-sm table-hover table-bordered compact {{ $tableStriped ?? '' }} {{ $datatable ? 'datatableauto' : '' }}"  width="100%" cellspacing="0" border="1">
             <thead>
                 <tr class="thead-inverse">
                     @foreach ($heads as $item)
