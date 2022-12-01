@@ -6,6 +6,7 @@ use DuxDucisArsen\Commons\View\Components\TableStandard;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
 
 class CommonsServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,9 @@ class CommonsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'commons');
         Blade::component('table-standard', TableStandard::class);
 
+        /**
+         * Agrego validator de recaptcha
+         */
+        Validator::extend( 'recaptcha', 'App\\Rules\\ReCaptcha@passes' );
     }
 }

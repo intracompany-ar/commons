@@ -19,7 +19,9 @@
         "email": "duxducisarsen@gmail.com"
     },
     "require": {
-        "php": "^7.1||^7.2||^7.3||^8.0||^8.1"
+        "php": "^7.1||^7.2||^7.3||^8.0||^8.1",
+        "nesbot/carbon": "^2.57",
+        "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
         "laravel/framework": "^9.4"
