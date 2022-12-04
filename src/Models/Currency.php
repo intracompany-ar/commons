@@ -24,6 +24,7 @@ class Currency extends Model
 
     const CURRENCY_ID_PESO_ARG = 2;
     const CURRENCY_ID_USS_USA = 3;
+    const USS_BLUE_ID = 4;
 
     /**
      * The "booting" method of the model.
