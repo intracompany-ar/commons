@@ -32,6 +32,6 @@ class CommonsServiceProvider extends ServiceProvider
         /**
          * Agrego validator de recaptcha
          */
-        Validator::extend( 'recaptcha', 'App\\Rules\\ReCaptcha@passes' );
+        Validator::extend( 'recaptcha', 'DuxDucisArsen\Commons\\Rules\\ReCaptcha@passes' );
     }
 }
