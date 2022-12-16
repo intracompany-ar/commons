@@ -21,7 +21,7 @@
 
         @stack('activationVariables')
 
-        @include('layouts._tags_metas')
+        @include('commons::layouts._tags_metas')
         @include('layouts._styles_y_favicons')
         @include('layouts._scripts_head')
 
@@ -32,7 +32,7 @@
         {{-- padding-bottom: 3rem; Arruinda el layout de scrollspy --}} 
         
         <noscript><strong>Esta app no va a funcionar corrrectamente sin javascript.</strong></noscript>
-        @include('layouts._audios')
+        @include('commons:layouts._audios')
 
         @extra
             {{-- FACEBOOK INCRUSTADO --}}
@@ -80,7 +80,7 @@
             <header class="d-print-none">
                 <x-nav-bar>@yield('subtitle')</x-nav-bar>
                 <div class="separador fino"></div>
-                @include('layouts._banner')
+                @include('commons::layouts._banner')
                 {{-- Lo dejo por jetstream pero no lo estoy usando 'header' --}}
                 @yield('header')
             </header>
@@ -94,7 +94,7 @@
                 </header>
             @endif --}}
 
-            @include('layouts._advices')
+            @include('commons::layouts._advices')
 
             @intra
                 @auth
