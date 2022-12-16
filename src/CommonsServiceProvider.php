@@ -35,7 +35,7 @@ class CommonsServiceProvider extends ServiceProvider
         Validator::extend( 'recaptcha', 'DuxDucisArsen\Commons\\Rules\\ReCaptcha@passes' );
 
         $this->publishes([
-            __DIR__.'/../storage/app/public/audio' => public_path('vendor/audio'),
-        ], 'audio');
+            __DIR__.'/storage/app/public/audio' => public_path('vendor/audio'),
+        ], 'commons:audio');
     }
 }
