@@ -32,7 +32,7 @@
         {{-- padding-bottom: 3rem; Arruinda el layout de scrollspy --}} 
         
         <noscript><strong>Esta app no va a funcionar corrrectamente sin javascript.</strong></noscript>
-        @include('commons:layouts._audios')
+        @include('commons::layouts._audios')
 
         @extra
             {{-- FACEBOOK INCRUSTADO --}}
