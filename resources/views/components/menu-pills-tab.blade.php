@@ -1,6 +1,3 @@
-{{--
-    <x-menu-pills-tab icono="fas fa-file-contract" active="active" id="legajoFiscal">LEGAJO FISCAL</x-menu-pills-tab>
---}}
 @props(['icono' => '', 'active' => '', 'id'])
 
 

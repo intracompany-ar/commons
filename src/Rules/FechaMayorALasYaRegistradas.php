@@ -11,7 +11,7 @@ class FechaMayorALasYaRegistradas implements Rule
 
     private $maxFechaRegistrada = null;
 
-    /**
+    /**ind
      * Create a new rule instance.
      *
      * @return void
