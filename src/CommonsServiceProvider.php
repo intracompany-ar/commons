@@ -2,6 +2,7 @@
 
 namespace DuxDucisArsen\Commons;
 
+use DuxDucisArsen\Commons\View\Components\ModalPpal;
 use DuxDucisArsen\Commons\View\Components\TableStandard;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Blade;
@@ -28,12 +29,17 @@ class CommonsServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'commons');
         Blade::component('table-standard', TableStandard::class);
+        Blade::component('modal-ppal', ModalPpal::class);
+
 
         /**
          * Agrego validator de recaptcha
          */
         Validator::extend( 'recaptcha', 'DuxDucisArsen\Commons\\Rules\\ReCaptcha@passes' );
 
+        /**
+         * Publico audios
+         */
         $this->publishes([
             __DIR__.'/storage/app/public/audio' => public_path('vendor/audio'),
         ], 'commons:audio');
