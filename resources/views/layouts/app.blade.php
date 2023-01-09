@@ -39,46 +39,27 @@
             <div id="fb-root"></div>
         @endextra
 
-        <div id="app" v-cloak>
-            @include('commons::layouts._advices')
-            
-            <header class="d-print-none">
-                <x-nav-bar>@yield('subtitle')</x-nav-bar>
-                <div class="separador fino"></div>
-                @include('commons::layouts._banner')
-            </header>
-    
+        <div id="app" v-cloak
+            data-title="@yield('subtitle')"
+            data-help="@yield('help')"
             @intra
-                <modal-help ref="modalHelp">
-                    @yield('help')
-                </modal-help>
-
-                @auth
-                    <menu-home-intra
-                        id="menuPrincipal"
-                        current-route="{{ Route::currentRouteName() }}"
-                        @if ( Route::currentRouteName() == 'home' )
-                            v-bind:menus="{{ $menus }}"
-                            v-bind:historial-backend="{{ json_encode($historial) }}"
-                        @endif
-                    >{{ __('Hello') }}</menu-home-intra>
-                @endauth
-
-                @env('local')
-                    {{-- <modal-checkout ref="modalCheckout"></modal-checkout> --}}
-                    {{-- <offcanvas-checkout ref="offCanvasCheckout"></offcanvas-checkout> --}}
-                @endenv
-
-                @include('humanResources.agenda._modal_contactos')
+                data-is-intra="true"
             @endintra
+            @env('local')
+                data-is-local="true"
+            @endenv
+            data-breadcrumb="@yield('breadcrumb')"
+            data-current-route-name="{{ Route::currentRouteName() }}"
+            data-saludo="{{ __('Hello') }}"
             
-            @yield('contentVue')
-        </div>
+            data-banner="@stack('banner')"
+            data-menus-backend="{{ json_encode($menus) }}"
+            data-historial-backend="{{ json_encode($historial) }}" 
+        ></div>
 
-        {{-- PAGE CONTENT --}}
-        <main>
-            @yield('content')
-        </main>
+        
+
+        <main> @yield('content') </main>
 
         {{-- FOOTER --}}
 		<footer class="d-print-none
@@ -98,16 +79,15 @@
 
         {{-- CHAT --}}
         @intra
-            @env('production')
+            {{-- @env('production')
                 <div class="d-print-none">
                     @include('layouts._chat')
                 </div>
-            @endenv
+            @endenv --}}
         @endintra
 
     </body>
 
-    
     <script src="{{ asset( mix('js/app.js')) }}"></script>
 
     @intra
@@ -118,5 +98,36 @@
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0&appId=1728936417381958&autoLogAppEvents=1" nonce="XB74hhg2"></script>
     @endintra
 
+    <script>
+        $(function() { 
+            @if (session('success'))
+                window.app.success( "{{ session('success') }}" );
+            @endif
+
+            @if (session('status'))
+                window.app.success( "{{ session('status') }}" );
+            @endif
+
+            @if (session('fail'))
+                window.app.danger( "{{ session('fail') }}" );
+            @endif
+
+            @if (session('error'))
+                window.app.danger( "{{ session('error') }}" );
+            @endif
+
+            @if(Session::has('info'))
+                window.app.info( "{{ session('info') }}" );
+            @endif
+
+            @if (isset($errors))
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        window.app.warning( "{{ $error }}" );
+                    @endforeach
+                @endif
+            @endif
+        });
+    </script>
     @stack('scriptsEnd')
 </html>
