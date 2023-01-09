@@ -1,12 +1,12 @@
 <div class="container-fluid d-print-none"
-    style="vertical-align:middle; margin-bottom: 0.5em; background-color: #e0e3dc; color:#6a6c6a; ">
+    style="vertical-align:middle; margin-bottom: 0.5em; background-color: #e0e3dc; color:#6a6c6a;">
     <div class="row">
 
         @intra
             @auth
                 {{-- Acceso a menú ppal --}}
                 <div class="col-2" style="line-height: 2.2;">
-                    <a data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-expanded="false" aria-controls="offcanvasMenu" accesskey="M" title="Menú completo" style="font-size: 1.25rem;">
+                    <a data-bs-toggle="offcanvas" href="#menuPrincipal" role="button" aria-expanded="false" aria-controls="menuPrincipal" accesskey="M" title="Menú completo" style="font-size: 1.25rem;">
                         <b><i class="fas fa-bars"></i> <span class="d-none d-sm-inline">Todo</span></b>
                     </a>
                 </div>
@@ -32,7 +32,6 @@
                 </h5>
             </div>
         @endintra
-
 
     </div>
 </div>

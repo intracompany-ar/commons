@@ -10,15 +10,20 @@
 <meta name="author" content="Dux Ducis Arsen">
 <link rel="manifest" href="/manifest.json">
 
+
+<meta name="app-id" content="{{ $applicationId ?? 1 }}">
 @intra
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="auth-id" content="{{ auth()->id() }}">
     <meta name='robots' content='noindex,nofollow'>
     <meta name="googlebot" content="noindex">
-
     <meta name="theme-color" content="#d72f23">
     <meta name="description" content="IceO, estionar tu empresa va a ser un juego de niños. ERP a tu medida.">
-
+    <meta name="url-base" content="{{ config('app.url_intra') }}">
+    @auth
+        <meta name="auth-id" content="{{ auth()->id() }}">
+        <meta name="auth-name" content="{{ auth()->user()->name }}">
+        <meta name="auth-email" content="{{ auth()->user()->email }}">
+    @endauth
 @else
     @urlcontiene( 'neuper' )
 
