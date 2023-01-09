@@ -24,7 +24,7 @@
         @include('layouts._scripts_head')
         
         @stack('scriptsIni')
-        @routes(['menu-home-intra', 'notifications', 'modal-help'])
+        @routes(['layout', 'menu-home-intra', 'notifications', 'modal-help'])
     </head>
 
     <body class="pb-4" style="font-family:Geogtq-Md,Helvetica,Arial,sans-serif;">
@@ -53,11 +53,9 @@
             data-saludo="{{ __('Hello') }}"
             
             data-banner="@stack('banner')"
-            data-menus-backend="{{ json_encode($menus) }}"
-            data-historial-backend="{{ json_encode($historial) }}" 
+            data-menus-backend="{{ $menus ? json_encode($menus) : null }}"
+            data-historial-backend="{{ $historial ? json_encode($historial) : null }}" 
         ></div>
-
-        
 
         <main> @yield('content') </main>
 

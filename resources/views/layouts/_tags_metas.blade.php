@@ -23,6 +23,9 @@
         <meta name="auth-id" content="{{ auth()->id() }}">
         <meta name="auth-name" content="{{ auth()->user()->name }}">
         <meta name="auth-email" content="{{ auth()->user()->email }}">
+        <meta name="person-id" content="{{ auth()->user()->person_id }}">
+        <meta name="person-first-name" content="{{ auth()->user()->person->first_name }}">
+        
     @endauth
 @else
     @urlcontiene( 'neuper' )
