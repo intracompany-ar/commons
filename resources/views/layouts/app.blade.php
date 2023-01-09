@@ -52,11 +52,23 @@
             data-current-route-name="{{ Route::currentRouteName() }}"
             data-saludo="{{ __('Hello') }}"
             
-            data-banner="@stack('banner')"
-            data-menus-backend="{{ $menus ? json_encode($menus) : null }}"
-            data-historial-backend="{{ $historial ? json_encode($historial) : null }}" 
-        ></div>
+            data-menus-backend="{{ isset($menus) ? json_encode($menus) : null }}"
+            data-historial-backend="{{ isset($historial) ? json_encode($historial) : null }}" 
+            data-close-session-label="{{ __('Cerrar sesión') }}" 
+            
+            @intra
+                data-logo="{{ asset('storage/img/img_icons/icono_grupo_72.png') }}"
+            @else
+                @urlcontiene('neuper')
+                    data-logo="{{ Storage::disk('s3_public')->url('img/fate/logo_neuper_trasl_letra_blanca.png') }}"
+                @elseurlcontiene('neumaticossantarosa')
+                    data-logo="{{ Storage::disk('s3_public')->url('img/michelin/starosa.png') }}"
+                @endurlcontiene
+            @endintra
 
+            data-menus-banner='@yield('banner')'
+        ></div>
+        
         <main> @yield('content') </main>
 
         {{-- FOOTER --}}
