@@ -98,7 +98,7 @@
 
     </body>
 
-    <script src="{{ asset( mix('js/app.js')) }}"></script>
+    <script data-cfasync="false" src="{{ asset( mix('js/app.js')) }}"></script>
 
     @intra
         {{-- <script src="{{ asset( mix('js/app_intranet.js')) }}"></script> --}}
