@@ -21,8 +21,8 @@
 
         @include('commons::layouts._tags_metas')
         @include('layouts._styles_y_favicons')
+
         @include('layouts._scripts_head')
-        
         @stack('scriptsIni')
     </head>
 
@@ -94,23 +94,14 @@
                 </div>
             @endenv --}}
         @endintra
-
     </body>
-
-
+    
+    @stack('scriptsEnd')
+    {{-- Importante este al final, porque el último routes carga el Ziggy, y está en scriptsEnd; sino da error --}}
     @routes(['layout', 'menu-home-intra', 'notifications', 'modal-help'])
-    <script data-cfasync="false" src="{{ asset( mix('js/app.js')) }}"></script>
-
-    @intra
-        {{-- <script src="{{ asset( mix('js/app_intranet.js')) }}"></script> --}}
-    @else
-        <script src="{{ asset( mix('js/app_extranet.js')) }}"></script>
-        {{-- FACEBOOK --}}
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0&appId=1728936417381958&autoLogAppEvents=1" nonce="XB74hhg2"></script>
-    @endintra
 
     <script>
-        $(function() { 
+        document.addEventListener("DOMContentLoaded", function(event) {
             @if (session('success'))
                 window.app.success( "{{ session('success') }}" );
             @endif
@@ -140,5 +131,5 @@
             @endif
         });
     </script>
-    @stack('scriptsEnd')
+    
 </html>
