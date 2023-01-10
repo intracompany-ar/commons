@@ -24,7 +24,6 @@
         @include('layouts._scripts_head')
         
         @stack('scriptsIni')
-        @routes(['layout', 'menu-home-intra', 'notifications', 'modal-help'])
     </head>
 
     <body class="pb-4" style="font-family:Geogtq-Md,Helvetica,Arial,sans-serif;">
@@ -98,6 +97,8 @@
 
     </body>
 
+
+    @routes(['layout', 'menu-home-intra', 'notifications', 'modal-help'])
     <script data-cfasync="false" src="{{ asset( mix('js/app.js')) }}"></script>
 
     @intra
