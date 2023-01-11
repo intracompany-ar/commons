@@ -19,6 +19,7 @@
     <meta name="theme-color" content="#d72f23">
     <meta name="description" content="IceO, estionar tu empresa va a ser un juego de niños. ERP a tu medida.">
     <meta name="url-base" content="{{ config('app.url_intra') }}">
+    <meta name="today" content="{{ date('Y-m-d') }}">
     
     @auth
         <meta name="auth-id" content="{{ auth()->id() }}">
