@@ -11,11 +11,7 @@
             @intra
                 {{ config('app.title.intra') }}
             @else
-                @urlcontiene( 'neuper' )
-                    {{ config('app.title.neuper') }}
-                @elseurlcontiene( 'neumaticossantarosa' )
-                    {{ config('app.title.nstarosa') }}
-                @endurlcontiene
+                {{ config('app.title.neuper') }}
             @endintra
         </title>
 
@@ -58,11 +54,7 @@
             @intra
                 data-logo="{{ asset('storage/img/img_icons/icono_grupo_72.png') }}"
             @else
-                @urlcontiene('neuper')
-                    data-logo="{{ Storage::disk('s3_public')->url('img/fate/logo_neuper_trasl_letra_blanca.png') }}"
-                @elseurlcontiene('neumaticossantarosa')
-                    data-logo="{{ Storage::disk('s3_public')->url('img/michelin/starosa.png') }}"
-                @endurlcontiene
+                data-logo="{{ Storage::disk('s3_public')->url('img/fate/logo_neuper_trasl_letra_blanca.png') }}"
             @endintra
 
             data-menus-banner='@yield('banner')'
@@ -75,11 +67,7 @@
             @intra
                 text-light" style="background-color: #6a6c6a; position: fixed;"
             @else
-                @urlcontiene( 'neuper' )
-                    text-light" style="background-color: #6a6c6a"
-                @elseurlcontiene( 'neumaticossantarosa' )
-                    site-footer"
-                @endurlcontiene
+                text-light" style="background-color: #6a6c6a"
             @endintra
             >
 			@yield('footer')
