@@ -3,6 +3,7 @@
 namespace DuxDucisArsen\Commons;
 
 use DuxDucisArsen\Commons\View\Components\ButtonPlus;
+use DuxDucisArsen\Commons\View\Components\GuestLayout;
 use DuxDucisArsen\Commons\View\Components\ModalPpal;
 use DuxDucisArsen\Commons\View\Components\TableStandard;
 use Illuminate\Database\Schema\Blueprint;
@@ -45,6 +46,7 @@ class CommonsServiceProvider extends ServiceProvider
         Blade::component('table-standard', TableStandard::class);
         Blade::component('modal-ppal', ModalPpal::class);
         Blade::component('button-plus', ButtonPlus::class);
+        Blade::component('guest-layout', GuestLayout::class);
 
 
         /**
