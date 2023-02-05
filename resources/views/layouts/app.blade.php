@@ -6,13 +6,13 @@
                 {{ auth()->user()->name }} ·
             @endauth
 
-            @yield('title') · {{ config('commons.subtitle-fix') }}
+            @yield('title') 
 
-            {{ config('commons.title') }}
+            · {{ config('commons.subtitle-fix') }}
+            · {{ config('commons.title') }}
         </title>
 
-
-        {{-- Antes: config('app.url') --> No funcionan los links a id dentro de la misma página --> Lo cambio por url()->current(). --}}
+        {{-- Antes: config('app.url') --> No funcionan los links a id dentro de la misma página --> Lo cambio por url()->current() --}}
         <base href="{{ url()->current() }}">
 
         <meta charset="utf-8">
@@ -27,26 +27,34 @@
         <meta name="app-id" content="{{ $applicationId ?? 1 }}">
         <meta name="csrf-token" content="{{ csrf_token() ?? 0 }}">
         <meta name="theme-color" content="{{ config('commons.theme-color') }}">
-        <meta name="description" content="{{ config('commons.description') }}">
         <meta name="today" content="{{ date('Y-m-d') }}">
-        <meta name="keywords" content="{{ config('commons.key-words') }}">
-        
-        @if( config('commons.privacy') == 'private')
+        <meta name="url-base" content="{{ config('commons.url') }}">
+
+        @if( config('commons.noindex') )
             <meta name='robots' content='noindex,nofollow'>
             <meta name="googlebot" content="noindex">
-            <meta name="url-base" content="{{ config('app.url_intra') }}">
-            
-            @auth
-                <meta name="auth-id" content="{{ auth()->id() }}">
-                <meta name="auth-name" content="{{ auth()->user()->name }}">
-                <meta name="auth-email" content="{{ auth()->user()->email }}">
-                <meta name="person-id" content="{{ auth()->user()->person_id }}">
-                <meta name="person-first-name" content="{{ auth()->user()->person->first_name }}">
-                <meta name="profile-photo" content="{{ auth()->user()->profile_photo_url ? auth()->user()->profile_photo_url : asset('storage/img/bib.png') }}">
-            @endauth
         @else
-            @include('commons::layouts._tags_metas_public')
+            <meta name="description" content="{{ config('commons.description') }}">
+            <meta name="keywords" content="{{ config('commons.key-words') }}">
+            {{-- Redes Sociales --}}
+            <meta property="og:url" content="{{ config('commons.url') }}">
+            <link rel="canonical" href="{{ config('commons.url') }}"/>
+
+            <meta property="og:type" content="article">
+            <meta property="og:title" content="{{ config('commons.title') }}">
+            <meta property="og:description" content="{{ config('commons.description') }}">
+            <meta property="og:image" content="{{ config('commons.og_image') }}">
         @endif
+
+        @auth
+            <meta name="auth-id" content="{{ auth()->id() }}">
+            <meta name="auth-name" content="{{ auth()->user()->name }}">
+            <meta name="auth-email" content="{{ auth()->user()->email }}">
+            <meta name="person-id" content="{{ auth()->user()->person_id }}">
+            <meta name="person-first-name" content="{{ auth()->user()->person->first_name }}">
+            <meta name="profile-photo" content="{{ auth()->user()->profile_photo_url ? auth()->user()->profile_photo_url : asset('storage/img/bib.png') }}">
+        @endauth
+
 
         @include('layouts._styles_y_favicons')
 

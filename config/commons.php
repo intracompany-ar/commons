@@ -31,7 +31,7 @@ return [
     /**
      * Deshabilita la indexación de bots
      */
-    'privacy' => 'private',
+    'noindex' => true,
 
     /**
      * El de arriba a la izquierda
@@ -41,5 +41,9 @@ return [
     'footer_position_fixed' => true,
 
     'chat' => true,
+
+    'og_image_path' => 'https://www.fate.com.ar/assets/img/pininfarinasport.jpg',
+
+    'url' => config('app.url') ?? 'https://neuper.com.ar'
 ];
 
