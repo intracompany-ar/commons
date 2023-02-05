@@ -36,7 +36,7 @@ return [
     /**
      * El de arriba a la izquierda
      */
-    'logo_path' => asset('storage/img/img_icons/icono_grupo_72.png'),
+    'logo_path' => storage_path('/img/img_icons/icono_grupo_72.png'),
 
     'footer_position_fixed' => true,
 
