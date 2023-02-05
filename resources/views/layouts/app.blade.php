@@ -8,11 +8,7 @@
 
             @yield('title') · {{ config('commons.subtitle-fix') }}
 
-            @intra
-                {{ config('app.title.intra') }}
-            @else
-                {{ config('app.title.neuper') }}
-            @endintra
+            {{ config('commons.title') }}
         </title>
 
 
@@ -35,7 +31,7 @@
         <meta name="today" content="{{ date('Y-m-d') }}">
         <meta name="keywords" content="{{ config('commons.key-words') }}">
         
-        @intra
+        @if( config('commons.privacy') == 'private')
             <meta name='robots' content='noindex,nofollow'>
             <meta name="googlebot" content="noindex">
             <meta name="url-base" content="{{ config('app.url_intra') }}">
@@ -50,7 +46,7 @@
             @endauth
         @else
             @include('commons::layouts._tags_metas_public')
-        @endintra
+        @endif
 
         @include('layouts._styles_y_favicons')
 
@@ -65,20 +61,17 @@
 
         @include('commons::layouts._audios')
 
-        @extra
-            {{-- FACEBOOK INCRUSTADO --}}
-            <div id="fb-root"></div>
-        @endextra
+        {{-- FACEBOOK INCRUSTADO --}}
+        <div id="fb-root"></div>
 
         <div id="app" v-cloak
             data-title="@yield('subtitle')"
             data-help="@yield('help')"
-            @intra
-                data-is-intra="true"
-            @endintra
+            
             @env('local')
                 data-is-local="true"
             @endenv
+
             data-breadcrumb="@yield('breadcrumb')"
             data-current-route-name="{{ Route::currentRouteName() }}"
             data-saludo="{{ __('Hello') }}"
@@ -87,31 +80,23 @@
             data-historial-backend="{{ isset($historial) ? json_encode($historial) : null }}" 
             data-close-session-label="{{ __('Cerrar sesión') }}" 
             
-            @intra
-                data-logo="{{ asset('storage/img/img_icons/icono_grupo_72.png') }}"
-            @else
-                data-logo="{{ Storage::disk('s3_public')->url('img/fate/logo_neuper_trasl_letra_blanca.png') }}"
-            @endintra
-
+            data-logo="{{ config('commons.logo_path') }}"
             data-menus-banner='@yield('banner')'
         ></div>
         
         <main> @yield('content') </main>
 
         {{-- FOOTER --}}
-		<footer class="d-print-none
-            @intra
-                text-light" style="background-color: #6a6c6a; position: fixed;"
-            @else
-                text-light" style="background-color: #6a6c6a"
-            @endintra
-            >
+		<footer class="d-print-none text-light" 
+            style="background-color: #6a6c6a; 
+                @if(config('commons.footer_position_fixed')) position: fixed; @endif
+            ">
 			@yield('footer')
         </footer>
 
 
         {{-- CHAT --}}
-        @intra
+        @if(config('commons.chat'))
             {{-- @env('production')
                 <div class="d-print-none">
                     @include('layouts._chat')

@@ -21,6 +21,25 @@ return [
     /**
      * Aparece continuamente luego del title
      */
-    'subtitle-fix' => 'IceO Software'
+    'subtitle-fix' => 'IceO Software',
+
+    /**
+     * 
+     */
+    'title' => 'App',
+
+    /**
+     * Deshabilita la indexación de bots
+     */
+    'privacy' => 'private',
+
+    /**
+     * El de arriba a la izquierda
+     */
+    'logo_path' => asset('storage/img/img_icons/icono_grupo_72.png'),
+
+    'footer_position_fixed' => true,
+
+    'chat' => true,
 ];
 
