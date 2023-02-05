@@ -41,6 +41,7 @@ class CommonsServiceProvider extends ServiceProvider
         });
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'commons');
+        
         Blade::component('table-standard', TableStandard::class);
         Blade::component('modal-ppal', ModalPpal::class);
         Blade::component('button-plus', ButtonPlus::class);
