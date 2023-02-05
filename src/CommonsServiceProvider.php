@@ -12,6 +12,18 @@ use Illuminate\Support\Facades\Validator;
 class CommonsServiceProvider extends ServiceProvider
 {
     /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/commons.php', 'commons'
+        );
+    }
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -44,9 +56,10 @@ class CommonsServiceProvider extends ServiceProvider
             __DIR__.'/storage/app/public/audio' => public_path('vendor/audio'),
         ], 'commons:audio');
         
+
         $this->publishes([
             __DIR__.'/../config/commons.php' => config_path('commons.php'),
         ], 'commons:config');
-
     }
+
 }

@@ -102,7 +102,7 @@
                     @include('layouts._chat')
                 </div>
             @endenv --}}
-        @endintra
+        @endif
     </body>
     
     @stack('scriptsEnd')
