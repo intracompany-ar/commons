@@ -100,11 +100,11 @@
 
         {{-- CHAT --}}
         @if(config('commons.chat'))
-            {{-- @env('production')
+            @env('production')
                 <div class="d-print-none">
-                    @include('layouts._chat')
+                    <div id="chat-container"></div>
                 </div>
-            @endenv --}}
+            @endenv
         @endif
     </body>
     
