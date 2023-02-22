@@ -27,7 +27,7 @@
         "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
-        "laravel/framework": "^9.4"
+        "laravel/framework": "^10.0"
     },
     "extra": {
         "laravel": {
