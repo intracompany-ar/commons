@@ -48,10 +48,25 @@
             <meta name="profile-photo" content="{{ auth()->user()->profile_photo_url ? auth()->user()->profile_photo_url : asset('storage/img/bib.png') }}">
         @endauth
 
+        {{-- STYLES --}}
+        @vite(['resources/sass/app.scss', 'resources/css/app0.css', 'resources/css/vendor.css'])
 
-        @include('layouts._styles_y_favicons')
+        <style media="screen">
+            /* Para que funcione Geogtq, es la que usa fate.com.ar. En lugar de secure_url deberia usar asset, pero en producción no se por qué toma http */
+            @font-face {
+                font-family: 'Geogtq-Md';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Geogtq-Md'), local('Geogtq-Md'), url( {{ asset('storage/fonts/Geogtq-Md.otf') }} ) format('opentype');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;/*@*/
+            }
+        </style>
 
-        @include('layouts._scripts_head')
+        <link rel="icon" type="image/x-icon" href="{{ asset('storage/img/img_icons/icono_grupo_32.ico') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/img/img_icons/icono_grupo_180.png') }}">
+
+        {{-- JAVASCRIPT --}}
+        @vite(['resources/js/fonts.js', 'resources/js/app.js'])
         @stack('scriptsIni')
     </head>
 
