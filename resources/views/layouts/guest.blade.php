@@ -3,8 +3,7 @@
     <head>
         <title>{{ $title }}</title>
         @include('commons::layouts._tags_metas_public')
-        @include('layouts._styles_y_favicons')
-        @include('layouts._scripts_head')
+        @include('layouts._head_standard')
     </head>
     <body>
         {{-- class="font-sans text-gray-900 antialiased"> TAILWIND  --}}
