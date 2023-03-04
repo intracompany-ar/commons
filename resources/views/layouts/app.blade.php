@@ -66,7 +66,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/img/img_icons/icono_grupo_180.png') }}">
 
         {{-- JAVASCRIPT --}}
-        @vite(['resources/js/fonts.js', 'resources/js/app.js'])
+        @include('layouts._head_standard')
         @stack('scriptsIni')
     </head>
 
