@@ -49,7 +49,7 @@
         @endauth
 
         {{-- STYLES --}}
-        @vite(['resources/sass/app.scss', 'resources/css/app0.css', 'resources/css/vendor.css'])
+        @vite(['resources/sass/app.scss', 'resources/css/app.css', 'resources/css/vendor.css'])
 
         <style media="screen">
             /* Para que funcione Geogtq, es la que usa fate.com.ar. En lugar de secure_url deberia usar asset, pero en producción no se por qué toma http */
