@@ -5,4 +5,7 @@
 {{-- , user-scalable=no no hace falta mientras programe responsive --}}
 <meta name="format-detection" content="telephone=no">
 <meta name="author" content="Dux Ducis Arsen">
-<link rel="manifest" href="/manifest.json">
+
+@if (config('commons.pwa'))
+    <link rel="manifest" href="/manifest.json">
+@endif
