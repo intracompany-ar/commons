@@ -15,5 +15,5 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/img/img_icons/icono_grupo_180.png') }}">
 
 {{-- JAVASCRIPT --}}
-<script defer src="{{ asset('storage/fonts/fonts.js') }}"></script>
+<script defer src="{{ asset('vendor/fonts/fonts.js') }}"></script>
 @vite(config('commons.vite_files_js'))
