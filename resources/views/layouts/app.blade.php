@@ -59,7 +59,9 @@
             <strong>Esta app no va a funcionar corrrectamente sin javascript.</strong>
         </noscript>
 
-        @include('commons::layouts._audios')
+        @if (config('commons.audios'))
+            @include('commons::layouts._audios')
+        @endif
 
         {{-- FACEBOOK INCRUSTADO --}}
         <div id="fb-root"></div>

@@ -53,7 +53,9 @@ return [
 
     'routes' => ['layout', 'menu-home-intra', 'notifications', 'modal-help'],
 
-    'pwa' => true
+    'pwa' => true,
+
+    'audios' => true
 
 ];
 
