@@ -24,7 +24,8 @@
     "require": {
         "php": "^7.1||^7.2||^7.3||^8.0||^8.1||^8.2",
         "nesbot/carbon": "^2.57",
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.2",
+        "tightenco/ziggy": "^1.5"
     },
     "require-dev": {
         "laravel/framework": "^10.0"

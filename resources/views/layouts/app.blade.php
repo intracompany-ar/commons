@@ -107,7 +107,7 @@
     
     @stack('scriptsEnd')
     {{-- Importante este al final, porque el último routes carga el Ziggy, y está en scriptsEnd; sino da error --}}
-    @routes(['layout', 'menu-home-intra', 'notifications', 'modal-help'])
+    @routes( config('commons.routes'))
 
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {

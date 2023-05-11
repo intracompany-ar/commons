@@ -48,6 +48,10 @@ return [
     'url' => config('app.url') ?? 'https://neuper.com.ar',
 
     'vite_files_style' => ['resources/sass/app.scss', 'resources/css/app.css', 'resources/css/vendor.css'],
-    'vite_files_js' => ['resources/js/app.js']
+
+    'vite_files_js' => ['resources/js/app.js'],
+
+    'routes' => ['layout', 'menu-home-intra', 'notifications', 'modal-help']
+
 ];
 
