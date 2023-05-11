@@ -47,6 +47,7 @@ return [
 
     'url' => config('app.url') ?? 'https://neuper.com.ar',
 
-    'vite_files' => ['resources/sass/app.scss', 'resources/css/app.css', 'resources/css/vendor.css']
+    'vite_files_style' => ['resources/sass/app.scss', 'resources/css/app.css', 'resources/css/vendor.css'],
+    'vite_files_js' => ['resources/js/app.js']
 ];
 
