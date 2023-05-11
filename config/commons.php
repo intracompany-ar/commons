@@ -45,6 +45,8 @@ return [
 
     'og_image_path' => 'https://www.fate.com.ar/assets/img/pininfarinasport.jpg',
 
-    'url' => config('app.url') ?? 'https://neuper.com.ar'
+    'url' => config('app.url') ?? 'https://neuper.com.ar',
+
+    'vite_files' => ['resources/sass/app.scss', 'resources/css/app.css', 'resources/css/vendor.css']
 ];
 
