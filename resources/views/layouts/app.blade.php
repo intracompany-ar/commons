@@ -64,7 +64,11 @@
         @endif
 
         {{-- FACEBOOK INCRUSTADO --}}
-        <div id="fb-root"></div>
+        @if (config('commons.facebook'))
+            {{-- FACEBOOK INCRUSTADO --}}
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=1728936417381958&autoLogAppEvents=1" nonce="UsmFayDC"></script>
+        @endif
 
         <div id="app" v-cloak
             data-title="@yield('subtitle')"
@@ -82,7 +86,8 @@
             data-historial-backend="{{ isset($historial) ? json_encode($historial) : null }}" 
             data-close-session-label="{{ __('Cerrar sesión') }}" 
             
-            data-logo="{{ config('commons.logo_path') }}"
+            data-logo="{{ config('commons.logo.path') }}"
+            data-width-logo="{{ config('commons.logo.width') }}" 
             data-menus-banner='@yield('banner')'
         ></div>
         

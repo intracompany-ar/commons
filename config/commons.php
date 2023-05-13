@@ -37,7 +37,10 @@ return [
      * El de arriba a la izquierda
      * * Relativo a public
      */
-    'logo_path' => 'storage/img/img_icons/icono_grupo_72.png',
+    'logo' => [
+        'path' => 'storage/img/img_icons/icono_grupo_72.png',
+        'width' => 30,
+    ],
 
     'footer_position_fixed' => true,
 
@@ -55,7 +58,9 @@ return [
 
     'pwa' => true,
 
-    'audios' => true
+    'audios' => true,
+
+    'facebook' => false
 
 ];
 
