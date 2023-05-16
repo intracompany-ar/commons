@@ -62,8 +62,8 @@ class CommonsServiceProvider extends ServiceProvider
         ], 'commons:audio');
         
         $this->publishes([
-            __DIR__.'/storage/app/public/audio' => public_path('vendor/audio'),
-        ], 'commons:audio');
+            __DIR__.'/storage/app/public/fonts' => public_path('vendor/fonts'),
+        ], 'commons:fonts');
 
         $this->publishes([
             __DIR__.'/../resources/js' => resource_path('vendor/commons'),
