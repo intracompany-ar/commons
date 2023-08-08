@@ -13,7 +13,7 @@ Route::middleware(['web', 'auth'])->group(function () {
         ->middleware('ajax')
         ->controller(CurrencyController::class)
         ->group(function () {
-            Route::get('indexMains', 'indexMains')->name('indexMains');
+            Route::get('indexCommons', 'indexCommons')->name('indexCommons');
         });
 
     Route::middleware('ajax')->group(function () {
