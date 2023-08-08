@@ -45,15 +45,15 @@ class Currency extends Model
          * EVENTS
          */
         self::saved(function ($currency) {
-            Cache::store('redis')->forget('currencies_all_json');
+            Cache::store('redis')->forget('currencies_commons_json');
         });
     }
 
 
     static public function todas()
     {
-        // Cache::store('redis')->forget('currencies_all_json');
-        return Cache::store('redis')->rememberForever('currencies_all_json', function () {
+        // Cache::store('redis')->forget('currencies_commons_json');
+        return Cache::store('redis')->rememberForever('currencies_commons_json', function () {
             return self::all();
         });
     }
