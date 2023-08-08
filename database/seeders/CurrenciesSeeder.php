@@ -77,7 +77,8 @@ class CurrenciesSeeder extends Seeder
                 ['id' => 59, 'cod' => '061', 'name' => 'ZLTYS POLACOS ', 'currency_cx_id' => NULL, 'symbol' => NULL],
                 ['id' => 60, 'cod' => '062', 'name' => 'RUPIAS HINDÚES ', 'currency_cx_id' => NULL, 'symbol' => NULL],
                 ['id' => 61, 'cod' => '063', 'name' => 'LEMPIRAS HONDUREÑAS ', 'currency_cx_id' => NULL, 'symbol' => NULL],
-                ['id' => 62, 'cod' => '064', 'name' => 'YUAN (Rep. Pop. China)', 'currency_cx_id' => NULL, 'symbol' => NULL]
+                ['id' => 62, 'cod' => '064', 'name' => 'YUAN (Rep. Pop. China)', 'currency_cx_id' => NULL, 'symbol' => NULL],
+                ['id' => 63, 'cod' => 'USSM', 'name' => 'Dólar Mayorista', 'currency_cx_id' => NULL, 'symbol' => 'U$SM']
             )
         );
     }
