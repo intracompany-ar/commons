@@ -2,9 +2,9 @@
 
 namespace DuxDucisArsen\Commons\Http\Controllers;
 
+use DuxDucisArsen\Commons\Http\Requests\CurrencyRequest;
 use DuxDucisArsen\Commons\Models\Currency;
 
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class CurrencyController extends Controller
@@ -16,8 +16,14 @@ class CurrencyController extends Controller
      */
     public function index()
     {
-        $currencies = Currency::todas();
-        return response()->json( $currencies, 200);
+        $rows = Currency::withoutGlobalScope('onlyCommonsCurrencies')->get();
+        return response()->json($rows, 200);
+    }
+
+    public function indexCommons()
+    {
+        $rows = Currency::todas();
+        return response()->json($rows, 200);
     }
 
     /**
@@ -36,9 +42,10 @@ class CurrencyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CurrencyRequest $request)
     {
-        //
+        Currency::create($request->validated());
+        return response()->json('Insertado', 201);
     }
 
     /**
@@ -70,9 +77,10 @@ class CurrencyController extends Controller
      * @param  \App\Models\Afip\Currency  $currency
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Currency $currency)
+    public function update(CurrencyRequest $request, Currency $currency)
     {
-        //
+        $currency->update($request->validated());
+        return response()->json('Actualizado', 204);
     }
 
     /**
@@ -83,6 +91,7 @@ class CurrencyController extends Controller
      */
     public function destroy(Currency $currency)
     {
-        //
+        $currency->delete();
+        return response()->json('Eliminada', 204);
     }
 }
