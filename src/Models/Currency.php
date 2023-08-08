@@ -53,11 +53,10 @@ class Currency extends Model
     static public function todas()
     {
         // Cache::store('redis')->forget('currencies_all_json');
-        return Cache::store('redis')->rememberForever('currencies_all_json', function(){
+        return Cache::store('redis')->rememberForever('currencies_all_json', function () {
             return self::all();
         });
     }
-
 }
 
 /*
@@ -66,7 +65,7 @@ class Currency extends Model
         $table->increments('id');
         $table->string('cod',4)->unique();
         $table->string('name',50);
-        $table->string('simbolo',50)->nullable();
+        $table->string('symbol',50)->nullable();
         $table->smallInteger('currency_cx_id')->nullable();
     });
 
