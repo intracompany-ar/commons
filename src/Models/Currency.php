@@ -36,7 +36,7 @@ class Currency extends Model
         parent::boot();
 
         static::addGlobalScope('onlyCommonsCurrencies', function (Builder $builder) {
-            $builder->whereIn('id', [2, 3, 4, 13, 14, 20, 22, 48, 58]);
+            $builder->whereIn('id', config('commons.currency_commons'));
         });
 
         static::addGlobalScope(new OrderByNameScope);

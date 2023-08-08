@@ -60,7 +60,8 @@ return [
 
     'audios' => true,
 
-    'facebook' => false
+    'facebook' => false,
+
+    'currency_commons' => [2, 3, 4, 13, 14, 20, 22, 48, 58]
 
 ];
-
