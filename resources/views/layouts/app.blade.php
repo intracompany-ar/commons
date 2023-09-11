@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>
+        <title id="title">
             @auth
                 {{ auth()->user()->name }} ·
             @endauth
-
-            @yield('title') 
-
-            · {{ config('commons.subtitle-fix') }}
-            · {{ config('commons.title') }}
+            @yield('title') {{ config('commons.title') }}
         </title>
 
         {{-- Antes: config('app.url') --> No funcionan los links a id dentro de la misma página --> Lo cambio por url()->current() --}}
