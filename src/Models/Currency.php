@@ -22,8 +22,8 @@ class Currency extends Model
     protected $guarded = ['id'];
     public $timestamps = false;
 
-    const CURRENCY_ID_PESO_ARG = 2;
-    const CURRENCY_ID_USS_USA = 3;
+    const ID_PESO_ARG = 2;
+    const ID_USS_USA = 3;
     const USS_BLUE_ID = 4;
 
     /**
