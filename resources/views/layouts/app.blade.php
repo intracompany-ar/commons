@@ -63,7 +63,7 @@
         @if (config('commons.facebook'))
             {{-- FACEBOOK INCRUSTADO --}}
             <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0&appId=1728936417381958&autoLogAppEvents=1" nonce="UsmFayDC"></script>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0&appId=1728936417381958" nonce="DMN6QhSp"></script>
         @endif
 
         <div id="app" v-cloak
