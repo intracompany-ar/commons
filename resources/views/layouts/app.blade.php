@@ -81,7 +81,7 @@
             data-menus-backend="{{ isset($menus) ? json_encode($menus) : null }}"
             data-historial-backend="{{ isset($historial) ? json_encode($historial) : null }}" 
             data-close-session-label="{{ __('Cerrar sesión') }}" 
-            
+            data-show-logo="@yield('logo')"            
             data-logo="{{ config('commons.logo.path') }}"
             data-width-logo="{{ config('commons.logo.width') }}" 
             data-menus-banner='@yield('banner')'
