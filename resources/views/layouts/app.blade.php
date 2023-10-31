@@ -88,6 +88,8 @@
         ></div>
         
         <main> @yield('content') </main>
+        
+        @yield('contentOutMain')
 
         {{-- FOOTER --}}
 		<footer class="d-print-none text-light" 
