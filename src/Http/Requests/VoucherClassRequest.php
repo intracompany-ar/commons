@@ -37,7 +37,7 @@ class VoucherClassRequest extends FormRequest
 
             'IdGrupoComp' => 'nullable|integer',
             'Iguales' => 'nullable|integer',
-            'name' => 'required|string|max:50',
+            'name' => 'required|string|max:128',
 
             'abbreviation' => 'nullable|string|max:15',
             'subsystem' => 'nullable|string|max:20',

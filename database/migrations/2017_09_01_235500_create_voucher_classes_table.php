@@ -20,7 +20,7 @@ return new class extends Migration
             $table->smallInteger('IdGrupoComp')->nullable();
             $table->smallInteger('Iguales')->nullable();
 
-            $table->string('name', 50);
+            $table->string('name', 128);
 
             $table->string('abbreviation', 15)->nullable();
             $table->string('subsystem', 20)->nullable()->index();
