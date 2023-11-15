@@ -2,12 +2,10 @@
 
 namespace DuxDucisArsen\Commons\Http\Controllers;
 
-use DuxDucisArsen\Commons\Http\Requests\CurrencyRequest;
-use DuxDucisArsen\Commons\Models\Currency;
+use DuxDucisArsen\Commons\Models\IdentificationClass;
+use Illuminate\Http\Request;
 
-use Illuminate\Routing\Controller;
-
-class CurrencyController extends Controller
+class IdentificationClassController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +14,7 @@ class CurrencyController extends Controller
      */
     public function index()
     {
-        $rows = Currency::withoutGlobalScope('onlyCommonsCurrencies')->get();
-        return response()->json($rows, 200);
-    }
-
-    public function indexCommons()
-    {
-        $rows = Currency::todas();
+        $rows  = IdentificationClass::all()->toJson();
         return response()->json($rows, 200);
     }
 
@@ -42,19 +34,18 @@ class CurrencyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CurrencyRequest $request)
+    public function store(Request $request)
     {
-        Currency::create($request->validated());
-        return response()->json('Insertado', 201);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Commons\Currency  $currency
+     * @param  \DuxDucisArsen\Commons\Models\IdentificationClass  $identificationClass
      * @return \Illuminate\Http\Response
      */
-    public function show(Currency $currency)
+    public function show(IdentificationClass $identificationClass)
     {
         //
     }
@@ -62,10 +53,10 @@ class CurrencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Commons\Currency  $currency
+     * @param  \DuxDucisArsen\Commons\Models\IdentificationClass  $identificationClass
      * @return \Illuminate\Http\Response
      */
-    public function edit(Currency $currency)
+    public function edit(IdentificationClass $identificationClass)
     {
         //
     }
@@ -74,24 +65,22 @@ class CurrencyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Commons\Currency  $currency
+     * @param  \DuxDucisArsen\Commons\Models\IdentificationClass  $identificationClass
      * @return \Illuminate\Http\Response
      */
-    public function update(CurrencyRequest $request, Currency $currency)
+    public function update(Request $request, IdentificationClass $identificationClass)
     {
-        $currency->update($request->validated());
-        return response()->json('Actualizado', 204);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Commons\Currency  $currency
+     * @param  \DuxDucisArsen\Commons\Models\IdentificationClass  $identificationClass
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Currency $currency)
+    public function destroy(IdentificationClass $identificationClass)
     {
-        $currency->delete();
-        return response()->json('Eliminada', 204);
+        //
     }
 }

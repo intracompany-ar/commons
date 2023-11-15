@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use DuxDucisArsen\Commons\Http\Controllers\VoucherClassController;
 use DuxDucisArsen\Commons\Http\Controllers\CurrencyController;
+use DuxDucisArsen\Commons\Http\Controllers\IdentificationClassController;
 
 Route::middleware(['web', 'auth'])->group(function () {
 
@@ -26,5 +27,6 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     Route::resources([
         'voucherClass' => VoucherClassController::class,
+        'identificationClass'         => IdentificationClassController::class
     ]);
 });
