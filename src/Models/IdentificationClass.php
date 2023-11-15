@@ -54,16 +54,3 @@ class IdentificationClass extends Model
         return $json ? $resultJson : json_decode($resultJson);
     }
 }
-
-/*
-    Schema::create('identification_classes', function (Blueprint $table) {
-        $table->increments('id');
-        $table->smallinteger('cod')->unique()->comment('oficial AFIP');
-        $table->string('name',50)->comment('oficial AFIP');
-
-        $table->string('descripcion',50)->nullable();
-        $table->string('abreviacion',6)->nullable();
-
-        $table->smallInteger('IdTipoDocumento_CX')->nullable()->unique();
-    });
-*/

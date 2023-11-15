@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('identification_classes', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallinteger('cod')->unique()->comment('oficial AFIP');
+            $table->smallinteger('afip_id')->unique()->comment('oficial AFIP');
             $table->string('name', 50)->comment('oficial AFIP');
 
             $table->string('descripcion', 50)->nullable();
