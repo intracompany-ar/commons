@@ -16,10 +16,10 @@ class VoucherClassController extends Controller
     public function index(Request $request)
     {
         $subsystem = $request->subsystem ?? null;
-        $voucherClasses = VoucherClass::with('voucherClassAnula')
-            ->when($subsystem, function ($q) use ($subsystem) {
-                $q->where('subsystem', $subsystem);
-            })
+        $voucherClasses = VoucherClass::when($subsystem, function ($q) use ($subsystem) {
+            $q->where('subsystem', $subsystem);
+        })
+            ->with('voucherClassAnula')
             ->get();
 
         return response()->json($voucherClasses, 200);

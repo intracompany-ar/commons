@@ -4,6 +4,7 @@ namespace DuxDucisArsen\Commons\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class VoucherClassRequest extends FormRequest
 {
@@ -25,7 +26,14 @@ class VoucherClassRequest extends FormRequest
     public function rules(Request $request)
     {
         return [
-            'afip_id' => "nullable|integer|min:0|max:999999|unique:voucher_classes,afip_id,$request->id,id",
+            'afip_id' =>
+            [
+                'nullable',
+                'integer',
+                'min:0',
+                'max:999999',
+                Rule::unique('voucher_classes')->ignore($request->id),
+            ],
 
             'IdGrupoComp' => 'nullable|integer',
             'Iguales' => 'nullable|integer',

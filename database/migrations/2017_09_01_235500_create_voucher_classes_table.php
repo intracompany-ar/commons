@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('name', 50);
 
             $table->string('abbreviation', 15)->nullable();
-            $table->string('subsystem', 20)->nullable();
+            $table->string('subsystem', 20)->nullable()->index();
 
             $table->smallInteger('afip_cf_mono_ri')->comment('0: Resp Insc, letter A. 1: es CF o Monotrib, letter B, 2: es C y otros no va')->nullable();
             $table->smallInteger('afip_suma')->nullable();
@@ -37,7 +37,7 @@ return new class extends Migration
             $table->string('DuplixDetalle', 1)->nullable();
             $table->string('numeracion_pv', 10)->default(0);
 
-            $table->unsignedBigInteger('voucher_class_anula_id')->nullable();
+            $table->unsignedBigInteger('voucher_class_anula_id')->nullable()->index();
             $table->string('EmisionPropia', 1)->nullable();
         });
 
