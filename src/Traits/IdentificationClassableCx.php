@@ -1,6 +1,6 @@
 <?php
 
-namespace DucDucisArsen\Commons\Traits;
+namespace DuxDucisArsen\Commons\Traits;
 
 use DuxDucisArsen\Commons\Models\IdentificationClass;
 
