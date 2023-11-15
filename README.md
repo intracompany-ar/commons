@@ -1,10 +1,5 @@
 # commons
-Herramientas bases para los demás
+
+Elementos comunes a demás sistemas
 
 # Require
-
-dayjs
-npm install dayjs
-npm install jquery
-
-
