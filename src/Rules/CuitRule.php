@@ -2,44 +2,33 @@
 
 namespace DuxDucisArsen\Commons\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 
-class CuitRule implements Rule
+class CuitRule implements ValidationRule
 {
     /**
-     * Create a new rule instance.
-     *
-     * @return void
+     * Run the validation rule.
      */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string  $attribute  , el nombre del input
-     * @param  mixed  $value ,  el cuit pasado
-     * @return bool
-     */
-    public function passes($attribute, $value)
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         $cuitConSimbolos = $value;
         $cuitSoloNumeros = preg_replace('/[^0-9-]/', '', $cuitConSimbolos);
         $cuitSoloNumerosString =  (string)$cuitSoloNumeros;
 
+        $flagFail = false;
+
         // Validación Longitud
-        if( strlen( $cuitSoloNumerosString ) != 11 )
-        {
-            return false;
+        if (strlen($cuitSoloNumerosString) != 11) {
+            $fail('Cuit inválida, longitud incorrecta');
+            return;
         }
 
         // Validación Base 11
-        $arrayDigitos = str_split( $cuitSoloNumerosString, 1);
+        $arrayDigitos = str_split($cuitSoloNumerosString, 1);
         $verificador = $arrayDigitos[10];
-        $xyInicial = $arrayDigitos[0].$arrayDigitos[1];
-        $multiplicadores = [5,4,3,2,7,6,5,4,3,2];
+        $xyInicial = $arrayDigitos[0] . $arrayDigitos[1];
+        $multiplicadores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
 
         // Calculo combinación lineal
         $combinacionLineal = 0;
@@ -54,30 +43,20 @@ class CuitRule implements Rule
             switch ($xyInicial) {
                 case '20':
                 case '30':
-                    return $verificador == 9;
+                    $flagFail = $verificador != 9;
                 case '27':
-                    return $verificador == 4;
+                    $flagFail = $verificador != 4;
                 default:
-                    return $verificador == 11 - $resto;
+                    $flagFail = $verificador != 11 - $resto;
             }
-        }
-        else if( 11 - $resto == 11 )
-        {
-            return $verificador == 0;
-        }
-        else
-        {
-            return $verificador == 11 - $resto;
+        } else if (11 - $resto == 11) {
+            $flagFail = $verificador != 0;
+        } else {
+            $flagFail = $verificador != 11 - $resto;
         };
-    }
 
-    /**
-     * Get the validation error message.
-     *
-     * @return string
-     */
-    public function message()
-    {
-        return 'Cuit inválido';
+        if ($flagFail) {
+            $fail('Cuit inválida');
+        }
     }
 }
