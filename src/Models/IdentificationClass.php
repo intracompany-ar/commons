@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Cache;
 class IdentificationClass extends Model
 {
     const ID_CUIT = 25;
+
+    protected $guarded = ['id'];
+
+    public $timestamps = false;
+
     /**
      * The "booting" method of the model.
      *
