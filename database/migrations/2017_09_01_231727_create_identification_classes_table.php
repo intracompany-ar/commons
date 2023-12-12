@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('identification_classes', function (Blueprint $table) {
             $table->increments('id');
             $table->smallinteger('afip_id')->unique()->comment('oficial AFIP');
-            $table->string('sap_id', 8)->unique()->comment('SAP FAte');
+            $table->string('sap_id', 8)->nullable()->unique()->comment('SAP FAte');
             $table->string('name', 50)->comment('oficial AFIP');
 
             $table->string('descripcion', 50)->nullable();
