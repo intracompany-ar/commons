@@ -11,7 +11,7 @@
     }
 </style>
 
-<link rel="icon" type="image/x-icon" href="{{ asset('storage/img/img_icons/icono_grupo_32.ico') }}">
+<link rel="icon" type="image/x-icon" href="{{ asset(config('commons.logo.icon_32')) }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/img/img_icons/icono_grupo_180.png') }}">
 
 {{-- JAVASCRIPT --}}

@@ -39,6 +39,7 @@ return [
      */
     'logo' => [
         'path' => 'storage/img/img_icons/icono_grupo_72.png',
+        'icon_32' => 'storage/img/img_icons/icono_grupo_32.ico',
         'width' => 30,
     ],
 
