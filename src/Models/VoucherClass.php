@@ -2,7 +2,9 @@
 
 namespace DuxDucisArsen\Commons\Models;
 
+use DuxDucisArsen\Commons\Models\Concepto;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * sum_stock: -1 resta, 1 suma, 0 no hace nada: ej prespuesto
@@ -106,6 +108,11 @@ class VoucherClass extends Model
     public function voucherClassAnula()
     {
         return $this->belongsTo(VoucherClass::class, 'voucher_class_anula_id');
+    }
+
+    public function conceptos(): BelongsToMany
+    {
+        return $this->belongsToMany(Concepto::class, 'concepto_voucher_classes', 'voucher_class_id', 'concepto_cx_id', 'id', 'id_cx')->withPivot('debit_credit');
     }
 
 

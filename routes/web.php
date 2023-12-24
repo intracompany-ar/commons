@@ -1,5 +1,6 @@
 <?php
 
+use DuxDucisArsen\Commons\Http\Controllers\ConceptoController;
 use Illuminate\Support\Facades\Route;
 
 use DuxDucisArsen\Commons\Http\Controllers\VoucherClassController;
@@ -21,7 +22,8 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('voucherClass/select', [VoucherClassController::class, 'select'])->name('voucherClass.select');
 
         Route::apiResources([
-            'currency'              => CurrencyController::class
+            'currency'              => CurrencyController::class,
+            'concepto' => ConceptoController::class
         ]);
     });
 
