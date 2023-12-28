@@ -86,6 +86,7 @@ class VoucherClass extends Model
      */
     const AFIP_ID_FACTURA_A = 1;
 
+
     const AFIP_ID_FACTURA_B = 6;
 
     const AFIP_ID_FACTURA_C = 11;
@@ -101,6 +102,10 @@ class VoucherClass extends Model
     const AFIP_ID_NC_B = 8;
 
     const AFIP_ID_NC_C = 13;
+
+    public const ID_COMMISSION = 2300;
+
+    public const ID_COMMISSION_ANULA = 10368;
 
     /**
      * RELATIONS
