@@ -35,6 +35,10 @@ class VoucherClass extends Model
 
     public const ID_TRANSF_BANCARIA = [550, 551];
 
+    public const ID_CASH_SHIFT_TIENEN_CHECK = '2020,2030,2010,2011,2001'; // Transf de caja, salidas, anul. entradas,anul entrada
+
+    public const ID_ND_Y_NC_TIENEN_CHECKS = '130,131,151'; // ND y sus anulacions
+
     public const VOUCHER_CLASS_ID_PAGOS_Y_ANULACION = [350, 351, 2210, 2211, 2300, 2301];
 
     public const VOUCHER_CLASS_ID_PRESUPUESTO = [200];
