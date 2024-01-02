@@ -50,7 +50,7 @@
     Echo.private(`App.Models.User.${authId}` )
         .notification((notification) => {
             // console.log(notification);
-            // // {link: "cuitSituacionConsulta/10", mensaje: "URGENTE. Solicitud de calificación de CUIT.20339229903 adpalarich", id: "3f8af904-7b9a-4ff9-a14d-ebf2ea84ec58", type: "App\\Notifications\\CuitSituacionConsultaCreatedNotification"}
+            // // {link: "entityIdSituacionConsulta/10", mensaje: "URGENTE. Solicitud de calificación de CUIT.20339229903 adpalarich", id: "3f8af904-7b9a-4ff9-a14d-ebf2ea84ec58", type: "App\\Notifications\\CuitSituacionConsultaCreatedNotification"}
 
             getNoLeidas();
 
@@ -62,10 +62,10 @@
                 case 'App\\Notifications\\CollectionNoticeApprovalCreatedNotification':
                     info('Cobro confirmado', 'COBRO CONFIRMADO');
                     break;
-                case 'App\\Notifications\\CuitSituacionConsultaCreatedNotification':
+                case 'App\\Notifications\\EntitySituacionConsultaCreatedNotification':
                     info('Nueva consulta de situación de CUIT', 'SITUACIÓN CUIT');
                     break;
-                case 'App\\Notifications\\CuitSituacionRespuestaCreatedNotification':
+                case 'App\\Notifications\\EntitySituacionRespuestaCreatedNotification':
                     info('Consulta de CUIT respondida', 'SITUACIÓN CUIT');
                     break;
 

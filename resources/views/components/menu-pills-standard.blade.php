@@ -1,7 +1,7 @@
 {{--
     <x-menu-pills-standard
         :menus="[ 
-            ['id' => 'situacioncuit', 'icon' => 'fas fa-sliders-h', 'active' => 'active', 'text' => 'SITUACION CUIT' ],
+            ['id' => 'situacionentityId', 'icon' => 'fas fa-sliders-h', 'active' => 'active', 'text' => 'SITUACION CUIT' ],
             ['id' => 'cobranza', 'icon' => 'fas fa-tasks', 'text' => 'SALDOS' ],
             ['id' => 'cheques', 'icon' => 'fas fa-money-check-alt', 'text' => 'CH. 3ROS' ],
             ['id' => 'aperturactacte', 'icon' => 'fas fa-folder-open', 'text' => 'APERTURA CTA.CTE.' ],

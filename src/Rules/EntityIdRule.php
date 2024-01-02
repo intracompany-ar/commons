@@ -5,27 +5,27 @@ namespace DuxDucisArsen\Commons\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 
-class CuitRule implements ValidationRule
+class EntityIdRule implements ValidationRule
 {
     /**
      * Run the validation rule.
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $cuitConSimbolos = $value;
-        $cuitSoloNumeros = preg_replace('/[^0-9-]/', '', $cuitConSimbolos);
-        $cuitSoloNumerosString =  (string)$cuitSoloNumeros;
+        $entityIdConSimbolos = $value;
+        $entityIdSoloNumeros = preg_replace('/[^0-9-]/', '', $entityIdConSimbolos);
+        $entityIdSoloNumerosString =  (string)$entityIdSoloNumeros;
 
         $flagFail = false;
 
         // Validación Longitud
-        if (strlen($cuitSoloNumerosString) != 11) {
+        if (strlen($entityIdSoloNumerosString) != 11) {
             $fail('Cuit inválida, longitud incorrecta');
             return;
         }
 
         // Validación Base 11
-        $arrayDigitos = str_split($cuitSoloNumerosString, 1);
+        $arrayDigitos = str_split($entityIdSoloNumerosString, 1);
         $verificador = $arrayDigitos[10];
         $xyInicial = $arrayDigitos[0] . $arrayDigitos[1];
         $multiplicadores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];

@@ -282,15 +282,15 @@ export function isEmail( text ){
     return REG_EXP_MAIL.test( String(text).toLowerCase() );
 };
 
-export function validarCuit(cuitNoValidado) {
-    cuitNoValidado = cuitNoValidado.toString();
+export function validarEntityId(entityIdNoValidado) {
+    entityIdNoValidado = entityIdNoValidado.toString();
 
-    let cuitSoloNumeros = cuitNoValidado.replace(REG_EXP_DIST_DE_NUMERO, '');
+    let entityIdSoloNumeros = entityIdNoValidado.replace(REG_EXP_DIST_DE_NUMERO, '');
 
-    if(cuitSoloNumeros.length != 11) {  return false };
+    if(entityIdSoloNumeros.length != 11) {  return false };
 
     let acumulado 	    = 0;
-    let arrayDigitos 	= cuitSoloNumeros.split("");
+    let arrayDigitos 	= entityIdSoloNumeros.split("");
     let ultimoDigito    = arrayDigitos.pop(); // elimina el último elemento y lo retorna
 
     arrayDigitos.forEach( (element, key) => {
@@ -305,13 +305,13 @@ export function validarCuit(cuitNoValidado) {
 }
 
 /**
- * A partir de un tipo entidad y un dni calcula el cuit
+ * A partir de un tipo entidad y un dni calcula el entityId
  * 
  * @param string,integer dni
  * @param string tipoEntidadParam  20, 30 por ejemplo
  * @return integer  NroCuit
  */
-export function calculateCuitFromDni(dni, tipoEntidadParam)
+export function calculateEntityIdFromDni(dni, tipoEntidadParam)
 {
     let documentArr = dni.toString().split('');// Array con lo numeros
     let tipoEntidadArr = tipoEntidadParam.split('');// Conver string en array Ej: '20' en [2,0]
