@@ -93,6 +93,21 @@
             data-info ="{{ session('info') ?? null }}";
             data-errors="{{ isset($errors) ? ($errors->any() ? $errors->all() : null) : null }}"
         ></div>
+
+        {{-- LO USO PARA TESTEAR CUANDO FALLA EL FRONT 
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ __('Success') }}!</strong> {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            --}}
+            {{-- @if (session('info'))
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <strong>{{ __('Info') }}!</strong> {{ session('info') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif --}}
         
         <main> @yield('content') </main>
         

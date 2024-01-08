@@ -50,7 +50,7 @@ class VoucherClassController extends Controller
         $voucherClass = new VoucherClass;
         $voucherClasses = VoucherClass::all();
 
-        return view('systems.voucherClass.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses'));
+        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses'));
     }
 
     /**
@@ -88,7 +88,7 @@ class VoucherClassController extends Controller
         $voucherClasses = VoucherClass::where('id', '<>', $voucherClass->id)->get(['id', 'name']);
         $anuladoPorVoucherClass = VoucherClass::find($voucherClass->voucher_class_anula_id);
 
-        return view('systems.voucherClass.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses', 'anuladoPorVoucherClass'));
+        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses', 'anuladoPorVoucherClass'));
     }
 
     /**
