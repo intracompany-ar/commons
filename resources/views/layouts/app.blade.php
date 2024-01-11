@@ -86,12 +86,12 @@
             data-width-logo="{{ config('commons.logo.width') }}" 
             data-menus-banner='@yield('banner')'
 
-            data-success ="{{ session('success') ?? null }}";
-            data-status ="{{ session('status') ?? null }}";
-            data-fail ="{{ session('fail') ?? null }}";
-            data-error ="{{ session('error') ?? null }}";
-            data-info ="{{ session('info') ?? null }}";
-            data-errors="{{ isset($errors) ? ($errors->any() ? $errors->all() : null) : null }}"
+            data-success ="{{ session('success') ?? null }}"
+            data-status ="{{ session('status') ?? null }}"
+            data-fail ="{{ session('fail') ?? null }}"
+            data-error ="{{ session('error') ?? null }}"
+            data-info ="{{ session('info') ?? null }}"
+            data-errors="{{ isset($errors) ? ($errors->any() ? json_encode($errors->all()) : null) : null }}"
         ></div>
 
         {{-- LO USO PARA TESTEAR CUANDO FALLA EL FRONT 
