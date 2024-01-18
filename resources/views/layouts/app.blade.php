@@ -135,37 +135,4 @@
     @stack('scriptsEnd')
     {{-- Importante este al final, porque el último routes carga el Ziggy, y está en scriptsEnd; sino da error --}}
     @routes( config('commons.routes'))
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            @if (session('success'))
-                window.app.success( "{{ session('success') }}" );
-            @endif
-
-            @if (session('status'))
-                window.app.success( "{{ session('status') }}" );
-            @endif
-
-            @if (session('fail'))
-                window.app.danger( "{{ session('fail') }}" );
-            @endif
-
-            @if (session('error'))
-                window.app.danger( "{{ session('error') }}" );
-            @endif
-
-            @if(Session::has('info'))
-                window.app.info( "{{ session('info') }}" );
-            @endif
-
-            @if (isset($errors))
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        window.app.warning( "{{ $error }}" );
-                    @endforeach
-                @endif
-            @endif
-        });
-    </script>
-    
 </html>
