@@ -29,7 +29,7 @@ return new class extends Migration
             $table->smallInteger('afip_suma')->nullable();
             $table->smallInteger('Suma1')->nullable();
             $table->smallInteger('sum_stock')->nullable();
-            $table->smallInteger('SumaCaja')->nullable();
+            $table->smallInteger('sum_cash')->nullable();
             $table->smallInteger('SumaIVAVentas')->nullable();
             $table->smallInteger('SumaIVACompras')->nullable();
 

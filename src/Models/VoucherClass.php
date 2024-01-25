@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * sum_stock: -1 resta, 1 suma, 0 no hace nada: ej prespuesto
- * SumaCaja: -1 resta, 1 suma, 0 no hace nada: ej prespuesto
+ * sum_cash: -1 resta, 1 suma, 0 no hace nada: ej prespuesto
  *
  *
  * Los id < 200 mueves cuenta corriente, ejemplo Mostrodor es 215, no se incluye en saldos CtaCte

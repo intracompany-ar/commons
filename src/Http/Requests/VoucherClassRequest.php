@@ -47,7 +47,7 @@ class VoucherClassRequest extends FormRequest
 
             'Suma1' => 'nullable|integer|max:1|min:-1',
             'sum_stock' => 'nullable|integer|max:1|min:-1',
-            'SumaCaja' => 'nullable|integer|max:1|min:-1',
+            'sum_cash' => 'nullable|integer|max:1|min:-1',
             'SumaIVAVentas' => 'nullable|integer|max:1|min:-1',
             'SumaIVACompras' => 'nullable|integer|max:1|min:-1',
 
