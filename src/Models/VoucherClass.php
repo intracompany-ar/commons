@@ -19,6 +19,7 @@ class VoucherClass extends Model
 
     public $timestamps = false;
 
+    public const ID_COMPRA_ACTIVO_BURSATIL = 1;
     public const LIST_IDS_DEBIT_CREDIT_BANCARIO = '530,531, 520,521';
     public const ID_DEBITO_CREDITO_BANCARIOS = [530, 531, 520, 521];
 
