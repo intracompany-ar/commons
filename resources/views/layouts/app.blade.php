@@ -2,9 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <title id="title">
-            @auth
-                {{ auth()->user()->name }} ·
-            @endauth
             @yield('title') {{ config('commons.title') }}
         </title>
 
