@@ -89,6 +89,16 @@
             data-error ="{{ session('error') ?? null }}"
             data-info ="{{ session('info') ?? null }}"
             data-errors="{{ isset($errors) ? ($errors->any() ? json_encode($errors->all()) : null) : null }}"
+
+            data-auth='{{ json_encode(
+                auth()->user()->load([
+                    'person:id,entity_id,nombre',
+                    'person.lastEmployment:id,entity_id,sucursal_actual_id',
+                    'person.lastEmployment.sucursalActual:id,nombre',
+                    'company:id,name',
+                ])
+                ->only('id', 'name', 'email', 'person_id', 'profile_photo_url', 'person', 'company')
+            ) }}'
         ></div>
 
         {{-- LO USO PARA TESTEAR CUANDO FALLA EL FRONT 
