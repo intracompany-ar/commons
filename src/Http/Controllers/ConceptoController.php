@@ -2,9 +2,9 @@
 
 namespace DuxDucisArsen\Commons\Http\Controllers;
 
-use App\Http\Requests\Accounting\ConceptoRequest;
 use DuxDucisArsen\Commons\Models\Concepto;
 use DuxDucisArsen\Commons\Http\Controllers\Controller;
+use DuxDucisArsen\Commons\Http\Requests\ConceptoRequest;
 
 class ConceptoController extends Controller
 {
