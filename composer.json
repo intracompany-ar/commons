@@ -2,7 +2,7 @@
     "name": "duxducisarsen/commons",
     "description": "Herramientas comunes para demás sistemas",
     "type": "library",
-    "version": "1.0",
+    "version": "1.0.1",
     "autoload": {
         "files": [
             "src/helpers.php"
@@ -23,7 +23,7 @@
     },
     "require": {
         "php": "^7.1||^7.2||^7.3||^8.0||^8.1||^8.2||^8.3",
-        "nesbot/carbon": "^3.1.1",
+        "nesbot/carbon": "^2.0||^3.1.1",
         "guzzlehttp/guzzle": "^7.8.1",
         "tightenco/ziggy": "^2.0"
     },
