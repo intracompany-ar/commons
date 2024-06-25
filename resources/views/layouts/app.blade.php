@@ -66,6 +66,8 @@
         <div id="app" v-cloak
             data-title="@yield('subtitle')"
             data-help="@yield('help')"
+
+            data-version-backend="{{ json_decode(file_get_contents(base_path('composer.json')), true)['version'] }}"
             
             @env('local')
                 data-is-local="true"
