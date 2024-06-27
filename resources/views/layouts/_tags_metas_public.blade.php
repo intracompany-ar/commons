@@ -9,3 +9,4 @@
 @if (config('commons.pwa'))
     <link rel="manifest" href="/manifest.json">
 @endif
+{{-- asdfasf --}}
