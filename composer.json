@@ -2,7 +2,7 @@
     "name": "duxducisarsen/commons",
     "description": "Herramientas comunes para demás sistemas",
     "type": "library",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "autoload": {
         "files": [
             "src/helpers.php"
