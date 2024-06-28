@@ -83,7 +83,6 @@
             data-show-logo="@yield('logo')"            
             data-logo="{{ config('commons.logo.path') }}"
             data-width-logo="{{ config('commons.logo.width') }}" 
-            data-menus-banner='@yield('banner')'
 
             data-success ="{{ session('success') ?? null }}"
             data-status ="{{ session('status') ?? null }}"
