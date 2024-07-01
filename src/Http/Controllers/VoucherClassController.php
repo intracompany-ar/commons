@@ -1,9 +1,9 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Http\Controllers;
+namespace IntraCompany\Commons\Http\Controllers;
 
-use DuxDucisArsen\Commons\Http\Requests\VoucherClassRequest;
-use DuxDucisArsen\Commons\Models\VoucherClass;
+use IntraCompany\Commons\Http\Requests\VoucherClassRequest;
+use IntraCompany\Commons\Models\VoucherClass;
 use Illuminate\Http\Request;
 
 class VoucherClassController extends Controller
@@ -69,7 +69,7 @@ class VoucherClassController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \DuxDucisArsen\Vouchers\Models\VoucherClass  $voucherClass
+     * @param  \IntraCompany\Vouchers\Models\VoucherClass  $voucherClass
      * @return \Illuminate\Http\Response
      */
     public function show(VoucherClass $voucherClass)

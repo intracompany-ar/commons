@@ -1,5 +1,5 @@
 {
-    "name": "duxducisarsen/commons",
+    "name": "intracompany-ar/commons",
     "description": "Herramientas comunes para demás sistemas",
     "type": "library",
     "version": "1.0.7",
@@ -8,18 +8,18 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "DuxDucisArsen\\Commons\\": "src/"
+            "IntraCompany\\Commons\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Alejandro Palarich",
-            "email": "duxducisarsen@gmail.com",
+            "email": "intracompany-ar@gmail.com",
             "role": "CEO"
         }
     ],
     "support": {
-        "email": "duxducisarsen@gmail.com"
+        "email": "intracompany-ar@gmail.com"
     },
     "require": {
         "php": "^8.1||^8.2||^8.3",
@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DuxDucisArsen\\Commons\\CommonsServiceProvider"
+                "IntraCompany\\Commons\\CommonsServiceProvider"
             ]
         }
     }

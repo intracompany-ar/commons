@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Traits;
+namespace IntraCompany\Commons\Traits;
 
 use App\Models\User;
 

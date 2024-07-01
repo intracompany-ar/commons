@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Http\Requests;
+namespace IntraCompany\Commons\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;

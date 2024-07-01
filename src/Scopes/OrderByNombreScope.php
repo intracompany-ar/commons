@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Scopes;
+namespace IntraCompany\Commons\Scopes;
 
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Model;

@@ -1,9 +1,9 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Http\Controllers;
+namespace IntraCompany\Commons\Http\Controllers;
 
-use DuxDucisArsen\Commons\Http\Requests\CurrencyRequest;
-use DuxDucisArsen\Commons\Models\Currency;
+use IntraCompany\Commons\Http\Requests\CurrencyRequest;
+use IntraCompany\Commons\Models\Currency;
 
 use Illuminate\Routing\Controller;
 

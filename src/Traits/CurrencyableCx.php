@@ -1,8 +1,8 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Traits;
+namespace IntraCompany\Commons\Traits;
 
-use DuxDucisArsen\Commons\Models\Currency;
+use IntraCompany\Commons\Models\Currency;
 
 /**
  * Ojo, no usar con Currencyable

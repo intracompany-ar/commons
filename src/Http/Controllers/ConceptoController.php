@@ -1,10 +1,10 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Http\Controllers;
+namespace IntraCompany\Commons\Http\Controllers;
 
-use DuxDucisArsen\Commons\Models\Concepto;
-use DuxDucisArsen\Commons\Http\Controllers\Controller;
-use DuxDucisArsen\Commons\Http\Requests\ConceptoRequest;
+use IntraCompany\Commons\Models\Concepto;
+use IntraCompany\Commons\Http\Controllers\Controller;
+use IntraCompany\Commons\Http\Requests\ConceptoRequest;
 
 class ConceptoController extends Controller
 {

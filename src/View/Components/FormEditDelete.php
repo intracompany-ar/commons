@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\View\Components;
+namespace IntraCompany\Commons\View\Components;
 
 use Illuminate\View\Component;
 

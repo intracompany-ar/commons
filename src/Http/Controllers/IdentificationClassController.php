@@ -1,9 +1,9 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Http\Controllers;
+namespace IntraCompany\Commons\Http\Controllers;
 
-use DuxDucisArsen\Commons\Http\Requests\IdentificationClassRequest;
-use DuxDucisArsen\Commons\Models\IdentificationClass;
+use IntraCompany\Commons\Http\Requests\IdentificationClassRequest;
+use IntraCompany\Commons\Models\IdentificationClass;
 
 class IdentificationClassController extends Controller
 {
@@ -37,7 +37,7 @@ class IdentificationClassController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \DuxDucisArsen\Commons\Models\IdentificationClass  $identificationClass
+     * @param  \IntraCompany\Commons\Models\IdentificationClass  $identificationClass
      * @return \Illuminate\Http\Response
      */
     public function update(IdentificationClassRequest $request, IdentificationClass $identificationClass)
@@ -50,7 +50,7 @@ class IdentificationClassController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \DuxDucisArsen\Commons\Models\IdentificationClass  $identificationClass
+     * @param  \IntraCompany\Commons\Models\IdentificationClass  $identificationClass
      * @return \Illuminate\Http\Response
      */
     public function destroy(IdentificationClass $identificationClass)

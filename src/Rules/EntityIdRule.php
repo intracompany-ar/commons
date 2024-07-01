@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Rules;
+namespace IntraCompany\Commons\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;

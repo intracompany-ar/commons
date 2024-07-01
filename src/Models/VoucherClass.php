@@ -1,8 +1,8 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Models;
+namespace IntraCompany\Commons\Models;
 
-use DuxDucisArsen\Commons\Models\Concepto;
+use IntraCompany\Commons\Models\Concepto;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Http\Controllers;
+namespace IntraCompany\Commons\Http\Controllers;
 
 abstract class Controller
 {

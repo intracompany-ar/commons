@@ -1,8 +1,8 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Traits;
+namespace IntraCompany\Commons\Traits;
 
-use DuxDucisArsen\Commons\Models\VoucherClass;
+use IntraCompany\Commons\Models\VoucherClass;
 
 trait VoucherClassable
 {

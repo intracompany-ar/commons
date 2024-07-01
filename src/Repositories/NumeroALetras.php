@@ -1,6 +1,6 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Repositories;
+namespace IntraCompany\Commons\Repositories;
 
 use ParseError;
 

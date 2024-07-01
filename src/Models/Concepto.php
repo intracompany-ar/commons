@@ -1,8 +1,8 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Models;
+namespace IntraCompany\Commons\Models;
 
-use DuxDucisArsen\Commons\Models\VoucherClass;
+use IntraCompany\Commons\Models\VoucherClass;
 use Illuminate\Database\Eloquent\Model;
 
 /**

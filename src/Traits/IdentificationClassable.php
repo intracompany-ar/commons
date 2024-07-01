@@ -1,8 +1,8 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Traits;
+namespace IntraCompany\Commons\Traits;
 
-use DuxDucisArsen\Commons\Models\IdentificationClass;
+use IntraCompany\Commons\Models\IdentificationClass;
 
 trait IdentificationClassable
 {

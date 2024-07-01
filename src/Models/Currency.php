@@ -1,8 +1,8 @@
 <?php
 
-namespace DuxDucisArsen\Commons\Models;
+namespace IntraCompany\Commons\Models;
 
-use DuxDucisArsen\Commons\Scopes\OrderByNameScope;
+use IntraCompany\Commons\Scopes\OrderByNameScope;
 
 use Illuminate\Database\Eloquent\{
     Builder,

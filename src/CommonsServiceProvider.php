@@ -1,11 +1,11 @@
 <?php
 
-namespace DuxDucisArsen\Commons;
+namespace IntraCompany\Commons;
 
-use DuxDucisArsen\Commons\View\Components\ButtonPlus;
-use DuxDucisArsen\Commons\View\Components\GuestLayout;
-use DuxDucisArsen\Commons\View\Components\ModalPpal;
-use DuxDucisArsen\Commons\View\Components\TableStandard;
+use IntraCompany\Commons\View\Components\ButtonPlus;
+use IntraCompany\Commons\View\Components\GuestLayout;
+use IntraCompany\Commons\View\Components\ModalPpal;
+use IntraCompany\Commons\View\Components\TableStandard;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -52,7 +52,7 @@ class CommonsServiceProvider extends ServiceProvider
         /**
          * Agrego validator de recaptcha
          */
-        Validator::extend( 'recaptcha', 'DuxDucisArsen\Commons\\Rules\\ReCaptcha@passes' );
+        Validator::extend( 'recaptcha', 'IntraCompany\Commons\\Rules\\ReCaptcha@passes' );
 
         /**
          * Publico audios
