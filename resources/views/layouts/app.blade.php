@@ -90,6 +90,7 @@
             data-error ="{{ session('error') ?? null }}"
             data-info ="{{ session('info') ?? null }}"
             data-errors="{{ isset($errors) ? ($errors->any() ? json_encode($errors->all()) : null) : null }}"
+            data-menus-banner='@yield('banner')'
 
             data-auth='{{ json_encode(
                 auth()->user()->load([
@@ -123,9 +124,7 @@
 
         {{-- FOOTER --}}
 		<footer class="d-print-none text-light" 
-            style="background-color: #6a6c6a; 
-                @if(config('commons.footer_position_fixed')) position: fixed; @endif
-            ">
+            style="background-color: #6a6c6a; @if(config('commons.footer_position_fixed')) position: fixed; @endif">
 			@yield('footer')
         </footer>
 
