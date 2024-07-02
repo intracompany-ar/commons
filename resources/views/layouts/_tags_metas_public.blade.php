@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 {{-- , user-scalable=no no hace falta mientras programe responsive --}}
 <meta name="format-detection" content="telephone=no">
-<meta name="author" content="Dux Ducis Arsen">
+<meta name="author" content="IntraCompany">
 
 @if (config('commons.pwa'))
     <link rel="manifest" href="/manifest.json">
