@@ -93,6 +93,7 @@
             data-errors="{{ isset($errors) ? ($errors->any() ? json_encode($errors->all()) : null) : null }}"
             data-menus-banner='@yield('banner')'
             
+            {{-- asdf --}}
 
             data-auth='{{ json_encode(
                 auth()->user()->load([
