@@ -118,7 +118,7 @@
                         <template v-slot:titulo><u>Ú</u>LTIMOS VISITADOS</template>
                         <template v-slot:cuerpo>
                             <span v-for="row in historial" v-bind:key="row.subsystem_id">
-                                <MenuLink v-bind:href="row.url" v-if="row.subsystem_id" >{{ row.subsystem_nombre }}</MenuLink>
+                                <MenuLink v-bind:href="row.url" v-if="row.subsystem_id" >{{ row.subsystem_name }}</MenuLink>
                                 <MenuLink v-bind:href="row.ruta" v-else>* {{ row.titulo }} </MenuLink>
                             </span>
                         </template>

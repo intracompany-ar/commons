@@ -7,13 +7,13 @@
  */
 if (! function_exists('urlS3Cdn')) {
     function urlS3Cdn($pathS3) {
-        $bucketNombre       = config('filesystems.disks.s3.bucket');
+        $bucketname       = config('filesystems.disks.s3.bucket');
         $bucketRegion       = config('filesystems.disks.s3.region');
         $bucketURL          = config('filesystems.disks.s3.url').'/';
 
         // $bucketURLConPath   = $bucketURL.'/reemplazame_por_path';
 
-        return str_replace( 'https://'.$bucketNombre.'.s3.'.$bucketRegion.'.amazonaws.com/', $bucketURL , $pathS3 );
+        return str_replace( 'https://'.$bucketname.'.s3.'.$bucketRegion.'.amazonaws.com/', $bucketURL , $pathS3 );
 
     }
 }

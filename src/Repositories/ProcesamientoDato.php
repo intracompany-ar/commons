@@ -23,10 +23,10 @@ class ProcesamientoDato
         return preg_replace('/\s+/', '+', $string);
     }
 
-    static public function extraerUltimos4CharNombreFile($fileSubido)
+    static public function extraerUltimos4CharnameFile($fileSubido)
     {
-        $nombre_file_subido = $fileSubido->getClientOriginalName();
-        return substr( $nombre_file_subido, 0, -4);
+        $name_file_subido = $fileSubido->getClientOriginalName();
+        return substr( $name_file_subido, 0, -4);
     }
 
 

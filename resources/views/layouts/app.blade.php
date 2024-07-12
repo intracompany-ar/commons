@@ -94,9 +94,9 @@
 
             data-auth='{{ json_encode(
                 auth()->user()->load([
-                    'person:id,entity_id,nombre',
+                    'person:id,entity_id,name',
                     'person.lastEmployment:id,entity_id,sucursal_actual_id',
-                    'person.lastEmployment.sucursalActual:id,nombre',
+                    'person.lastEmployment.sucursalActual:id,name',
                     'company:id,name,entity_id',
                 ])
                 ->only('id', 'name', 'email', 'person_id', 'profile_photo_url', 'person', 'company')
