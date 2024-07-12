@@ -60,6 +60,8 @@ class VoucherClass extends Model
     // -- VENTA Fact/NC FactLote/NCLote Liq/ALiquidacion  Ticket/AnTicket ND/NC NC/F --
     const IDS_FACTURACION = [100, 101, 102, 103, 105, 106, 110, 120, 130, 131, 140, 141];
 
+    const IDS_FACTURA_NC_VENTA = [100, 101];
+
     const IDS_CARD_LIQUIDATION = [570, 572, 580];
 
     const ID_LIQ_TARJ_VTA_CRE = 572;
