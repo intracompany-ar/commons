@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace IntraCompany\Commons\Traits;
 
 use App\Models\ManagementControl\Company;
 
