@@ -2,7 +2,7 @@
     "name": "intracompany-ar/commons",
     "description": "Herramientas comunes para demás sistemas",
     "type": "library",
-    "version": "1.0.19",
+    "version": "1.0.20",
     "autoload": {
         "files": [
             "src/helpers.php"
