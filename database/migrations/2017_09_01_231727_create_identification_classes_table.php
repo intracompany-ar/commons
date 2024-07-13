@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 50)->comment('oficial AFIP');
 
             $table->string('description', 50)->nullable();
-            $table->string('abreviacion', 6)->nullable();
+            $table->string('abbreviation', 6)->nullable();
 
             $table->smallInteger('IdTipoDocumento_CX')->nullable()->unique();
         });

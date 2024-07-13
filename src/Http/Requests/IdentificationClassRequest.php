@@ -47,7 +47,7 @@ class IdentificationClassRequest extends FormRequest
 
             'name' => 'required|string|max:50',
             'description' => 'nullable|string|max:50',
-            'abreviacion' => 'nullable|string|max:6',
+            'abbreviation' => 'nullable|string|max:6',
         ];
     }
 }
