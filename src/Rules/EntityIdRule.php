@@ -7,56 +7,72 @@ use Illuminate\Contracts\Validation\ValidationRule;
 
 class EntityIdRule implements ValidationRule
 {
+    const MAX_DU = 80999999;
+
+    const MIN_DU = 1000000;
+
     /**
      * Run the validation rule.
+     *
+     * @param  \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $entityIdConSimbolos = $value;
-        $entityIdSoloNumeros = preg_replace('/[^0-9-]/', '', $entityIdConSimbolos);
-        $entityIdSoloNumerosString =  (string)$entityIdSoloNumeros;
+        if (! $this->isEntityId($value) && ! $this->isDocumentoUnico($value)) {
+            $fail('Documento inválido. No es una CUIT ni un DU');
+        }
+    }
 
-        $flagFail = false;
+    public function isEntityId($entity_idConSimbolos)
+    {
+
+        $entity_idSoloNumeros = preg_replace('/[^0-9-]/', '', $entity_idConSimbolos);
+        $entity_idSoloNumerosString = (string) $entity_idSoloNumeros;
 
         // Validación Longitud
-        if (strlen($entityIdSoloNumerosString) != 11) {
-            $fail('Cuit inválida, longitud incorrecta');
-            return;
+        if (strlen($entity_idSoloNumerosString) != 11) {
+            return false;
         }
 
         // Validación Base 11
-        $arrayDigitos = str_split($entityIdSoloNumerosString, 1);
+        $arrayDigitos = str_split($entity_idSoloNumerosString, 1);
         $verificador = $arrayDigitos[10];
-        $xyInicial = $arrayDigitos[0] . $arrayDigitos[1];
+        $xyInicial = $arrayDigitos[0].$arrayDigitos[1];
         $multiplicadores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
 
         // Calculo combinación lineal
         $combinacionLineal = 0;
         foreach ($multiplicadores as $key => $multiplicador) {
             $combinacionLineal += $multiplicador * $arrayDigitos[$key];
-        };
+        }
         $resto = $combinacionLineal % 11;
 
-
-        if (11 - $resto == 10) // Implica que el verificador es 10, y solo pueden tener 1 digito => se cambia el xy incial
-        {
+        if (11 - $resto == 10) { // Implica que el verificador es 10, y solo pueden tener 1 digito => se cambia el xy incial
             switch ($xyInicial) {
                 case '20':
                 case '30':
-                    $flagFail = $verificador != 9;
+                    return $verificador == 9;
                 case '27':
-                    $flagFail = $verificador != 4;
+                    return $verificador == 4;
                 default:
-                    $flagFail = $verificador != 11 - $resto;
+                    return $verificador == 11 - $resto;
             }
-        } else if (11 - $resto == 11) {
-            $flagFail = $verificador != 0;
+        } elseif (11 - $resto == 11) {
+            return $verificador == 0;
         } else {
-            $flagFail = $verificador != 11 - $resto;
-        };
-
-        if ($flagFail) {
-            $fail('Cuit inválida');
+            return $verificador == 11 - $resto;
         }
+    }
+
+    public function isDocumentoUnico($duConSimbolos)
+    {
+        $duSoloNumeros = preg_replace('/[^0-9-]/', '', $duConSimbolos);
+        $du = $duSoloNumeros;
+
+        if ($duSoloNumeros > self::MAX_DU || $duSoloNumeros < self::MIN_DU) {
+            return false;
+        }
+
+        return true;
     }
 }
