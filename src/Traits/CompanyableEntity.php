@@ -2,7 +2,7 @@
 
 namespace IntraCompany\Commons\Traits;
 
-use App\Models\ManagementControl\Company;
+use IntraCompany\Commons\Models\Company;
 
 trait CompanyableEntity
 {
