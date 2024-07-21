@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace IntraCompany\Commons\Models;
 
 use App\Models\Subsystem;
 use App\Models\User;
