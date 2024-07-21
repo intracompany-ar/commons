@@ -2,7 +2,7 @@
 
 namespace IntraCompany\Commons\Traits;
 
-use App\Models\User;
+use IntraCompany\Commons\Models\User;
 
 trait CreatedBy
 {

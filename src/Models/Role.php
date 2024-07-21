@@ -2,8 +2,8 @@
 
 namespace IntraCompany\Commons\Models;
 
-use App\Models\Subsystem;
-use App\Models\User;
+use IntraCompany\Commons\Models\Subsystem;
+use IntraCompany\Commons\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model

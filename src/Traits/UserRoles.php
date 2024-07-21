@@ -2,7 +2,7 @@
 
 namespace IntraCompany\Commons\Traits;
 
-use App\Models\Role;
+use IntraCompany\Commons\Models\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Cache;
 
