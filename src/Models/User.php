@@ -57,4 +57,28 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Company::class, 'company_user', 'user_id', 'entity_id', 'id', 'entity_id')->limit(1);
     }
+
+    /**
+     * Si el usuario tiene una person, esa person tiene un employment, toma la sucursal actual de ese employment.
+     */
+    public function sucursalActual(): bool
+    {
+        if ($this->hasPerson()) {
+            if ($this->person()->first()->hasEmployment()) {
+                return $this->person()->first()->lastEmployment()->first()->sucursal_actual_id;
+            }
+
+            return false;
+        }
+
+        return false;
+    }
+
+     /**
+     * Querys
+     */
+    public function hasPerson(): bool
+    {
+        return ! is_null($this->person_id);
+    }
 }

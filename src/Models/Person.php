@@ -22,4 +22,12 @@ class Person extends Model
         return $this->hasOne(Employment::class, 'entity_id', 'entity_id')->latest('fecha_alta');
     }
 
+    /**
+     * Tiene o tuvo en el pasado algún empleo
+     */
+    public function hasEmployment()
+    {
+        return $this->lastEmployment()->first() ? true : false;
+    }
+
 }
