@@ -27,32 +27,21 @@ class VoucherClassController extends Controller
 
     public function select(Request $request)
     {
-        $subSistema = $request->subsystem ?? null;
+        $subsystem = $request->subsystem ?? null;
         $ids = $request->ids ? explode(',', $request->ids) : null;
 
-        return VoucherClass::when($ids, function ($q) use ($ids) {
+        $rows = VoucherClass::when($ids, function ($q) use ($ids) {
             $q->whereIn('id', $ids);
         })
-            ->when($subSistema, function ($q) use ($subSistema) {
-                $q->where('subsystem', $subSistema);
+            ->when($subsystem, function ($q) use ($subsystem) {
+                $q->where('subsystem', $subsystem);
             })
-            ->get()
-            ->toJson();
+            ->get(['id', 'name', 'abbreviation', 'subsystem']);
+
+        return response()->json($rows, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $voucherClass = new VoucherClass;
-        $voucherClasses = VoucherClass::all();
-
-        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses'));
-    }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -77,19 +66,6 @@ class VoucherClassController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(VoucherClass $voucherClass)
-    {
-        $voucherClasses = VoucherClass::where('id', '<>', $voucherClass->id)->get(['id', 'name']);
-        $anuladoPorVoucherClass = VoucherClass::find($voucherClass->voucher_class_anula_id);
-
-        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses', 'anuladoPorVoucherClass'));
-    }
 
     /**
      * Update the specified resource in storage.
@@ -117,4 +93,35 @@ class VoucherClassController extends Controller
 
         return redirect()->route('appAdmin')->with('success', 'Tipo Comprobante eliminado.');
     }
+
+
+
+    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(VoucherClass $voucherClass)
+    {
+        $voucherClasses = VoucherClass::where('id', '<>', $voucherClass->id)->get(['id', 'name']);
+        $anuladoPorVoucherClass = VoucherClass::find($voucherClass->voucher_class_anula_id);
+
+        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses', 'anuladoPorVoucherClass'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $voucherClass = new VoucherClass;
+        $voucherClasses = VoucherClass::all();
+
+        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses'));
+    }
+
 }
