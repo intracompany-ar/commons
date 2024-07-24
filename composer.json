@@ -25,7 +25,8 @@
         "php": "^8.2||^8.3",
         "nesbot/carbon": "^2.0||^3.1.1",
         "guzzlehttp/guzzle": "^7.8.1",
-        "tightenco/ziggy": "^2.0"
+        "tightenco/ziggy": "^2.0",
+        "laravel/sanctum": "^4.0"
     },
     "require-dev": {
         "laravel/framework": "^11.0"
