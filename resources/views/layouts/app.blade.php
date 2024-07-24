@@ -65,6 +65,9 @@
         @endif
 
         <div id="app" v-cloak
+            
+            data-token="{{ session('token') }}"
+
             data-title="@yield('subtitle')"
             data-help="@yield('help')"
 
