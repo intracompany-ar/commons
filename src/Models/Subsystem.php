@@ -9,7 +9,7 @@ class Subsystem extends Model
 
     protected $guarded = ['id'];
 
-    const ALL_ROLES_CAN_USE_IDS = [37, 33];
+    const ALL_ROLES_CAN_USE_IDS = [37, 33, 68];
 
     public function roles()
     {
