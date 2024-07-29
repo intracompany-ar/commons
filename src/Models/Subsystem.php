@@ -9,6 +9,7 @@ class Subsystem extends Model
 
     protected $guarded = ['id'];
 
+    const DASHBOARD_ID = 37;
 
     public function roles()
     {
