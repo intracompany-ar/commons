@@ -17,13 +17,19 @@ class Employment extends Model
 
     protected $guarded = ['id'];
 
-
-     /**
+    
+    
+    /**
      * SUCURSALES
      */
     public function sucursalActual(): BelongsTo
     {
         return $this->belongsTo(Sucursal::class, 'sucursal_actual_id');
+    }
+
+    public function sucursales(): BelongsToMany
+    {
+        return $this->belongsToMany(Sucursal::class, 'employment_sucursals');
     }
 
 }
