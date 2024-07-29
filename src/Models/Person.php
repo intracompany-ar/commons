@@ -84,4 +84,14 @@ class Person extends Model
         return $this->lastEmployment()->first() ? true : false;
     }
 
+    
+    /**
+    * Para hacer la transición del hasOne al hasMany uso el siguiente modelo y dejo los 2 funcionando en paralelo
+    */
+    public function employments()
+    {
+        return $this->hasMany(Employment::class, 'entity_id', 'entity_id');
+    }
+
+
 }
