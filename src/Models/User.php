@@ -65,6 +65,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    /**
+     * PERMISOS Y ROLES
+     */
+    public function isSuperAdmin(): bool
+    {
+        return $this->hasRole('SuperAdministrador');
+    }
     
     /**
      * Si el usuario tiene alguno de los roles
