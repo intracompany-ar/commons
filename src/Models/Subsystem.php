@@ -1,6 +1,7 @@
 <?php
 
 namespace IntraCompany\Commons\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Subsystem extends Model
@@ -14,5 +15,10 @@ class Subsystem extends Model
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function companyDepartment()
+    {
+        return $this->belongsTo(CompanyDepartment::class);
     }
 }
