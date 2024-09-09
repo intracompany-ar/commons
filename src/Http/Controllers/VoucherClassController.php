@@ -41,7 +41,6 @@ class VoucherClassController extends Controller
         return response()->json($rows, 200);
     }
 
- 
     /**
      * Store a newly created resource in storage.
      *
@@ -52,7 +51,7 @@ class VoucherClassController extends Controller
     {
         VoucherClass::create($request->validated());
 
-        return redirect()->route('appAdmin')->with('success', 'Tipo Comprobante insertado');
+        return response()->json('Tipo Comprobante creado.', 201);
     }
 
     /**
@@ -63,7 +62,7 @@ class VoucherClassController extends Controller
      */
     public function show(VoucherClass $voucherClass)
     {
-        //
+        return response()->json($voucherClass, 200);
     }
 
 
@@ -78,7 +77,7 @@ class VoucherClassController extends Controller
     {
         $voucherClass->update($request->validated());
 
-        return redirect()->route('appAdmin')->with('success', 'Tipo Comprobante editado.');
+        return response()->json('Tipo Comprobante editado.', 204);
     }
 
     /**
@@ -91,37 +90,7 @@ class VoucherClassController extends Controller
     {
         $voucherClass->delete();
 
-        return redirect()->route('appAdmin')->with('success', 'Tipo Comprobante eliminado.');
-    }
-
-
-
-    
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(VoucherClass $voucherClass)
-    {
-        $voucherClasses = VoucherClass::where('id', '<>', $voucherClass->id)->get(['id', 'name']);
-        $anuladoPorVoucherClass = VoucherClass::find($voucherClass->voucher_class_anula_id);
-
-        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses', 'anuladoPorVoucherClass'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $voucherClass = new VoucherClass;
-        $voucherClasses = VoucherClass::all();
-
-        return view('systems.create_or_edit_voucher_class', compact('voucherClass', 'voucherClasses'));
+        return response()->json('Tipo Comprobante eliminado.', 204);
     }
 
 }
