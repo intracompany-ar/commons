@@ -16,6 +16,7 @@ class Subsystem extends Model
     {
         return $this->belongsToMany(Role::class);
     }
+    
 
     public function companyDepartment()
     {

@@ -60,60 +60,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Company::class, 'company_user', 'user_id', 'entity_id', 'id', 'entity_id')->limit(1);
     }
 
-    public function roles(): BelongsToMany
-    {
-        return $this->belongsToMany(Role::class);
-    }
-
-    /**
-     * PERMISOS Y ROLES
-     */
-    public function isSuperAdmin(): bool
-    {
-        return $this->hasRole('SuperAdministrador');
-    }
-    
-    /**
-     * Si el usuario tiene alguno de los roles
-     *
-     * @param  array|string  $roles
-     */
-    public function hasAnyRole($roles): bool
-    {
-        if (is_array($roles)) {
-            foreach ($roles as $role) {
-                if ($this->hasRole($role)) {
-                    return true;
-                }
-            }
-        } else {
-            if ($this->hasRole($roles)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * @param  string  $role
-     */
-    public function hasRole($role)
-    {
-        $arrayRoles = $this->getRoles();
-        if (in_array($role, $arrayRoles)) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public function getRoles()
-    {
-        return Cache::store('redis')->remember("user_roles_$this->id", 86400, function () {
-            return $this->roles()->get(['name'])->pluck('name')->toArray();
-        });
-    }
 
     /**
      * Si el usuario tiene una person, esa person tiene un employment, toma la sucursal actual de ese employment.
