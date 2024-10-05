@@ -6,8 +6,6 @@ export function success(content, titulo = null){window.app.notificar('Success', 
 export function pushCartGeneral(content){ window.app.pushCartGeneral(content) };
 export function getCartGeneral(content){ window.app.getCart(content) };
 
-export function router(name, params){ return route(name,params)};
-
 export const today = 
     document.head.querySelector('meta[name="today"]') ? document.head.querySelector('meta[name="today"]').content : '';
 export const urlBase = 

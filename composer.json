@@ -2,7 +2,7 @@
     "name": "intracompany-ar/commons",
     "description": "Herramientas comunes para demás sistemas",
     "type": "library",
-    "version": "1.0.47",
+    "version": "1.0.48",
     "autoload": {
         "files": [
             "src/helpers.php"
@@ -26,7 +26,6 @@
         "nesbot/carbon": "^2.0||^3.1.1",
         "guzzlehttp/guzzle": "^7.8.1",
         "intracompany-ar/geography": "^1.1",
-        "tightenco/ziggy": "^2.0",
         "laravel/sanctum": "^4.0"
     },
     "require-dev": {

@@ -55,8 +55,6 @@ return [
 
     'vite_files_js' => ['resources/js/app.js'],
 
-    'routes' => ['layout', 'menu-home-intra', 'notifications', 'modal-help'],
-
     'pwa' => true,
 
     'audios' => true,

@@ -144,6 +144,4 @@
     <script>
         window.flash = @json(['front_route' => session('front_route')]);
     </script>
-    {{-- Importante este al final, porque el último routes carga el Ziggy, y está en scriptsEnd; sino da error --}}
-    @routes( config('commons.routes'))
 </html>
