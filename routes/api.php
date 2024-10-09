@@ -4,6 +4,7 @@ use IntraCompany\Commons\Http\Controllers\ConceptoController;
 use IntraCompany\Commons\Http\Controllers\CurrencyController;
 use IntraCompany\Commons\Http\Controllers\VoucherClassController;
 use IntraCompany\Commons\Http\Controllers\IdentificationClassController;
+use IntraCompany\Commons\Http\Controllers\CondicionIvaController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('api')
@@ -21,6 +22,7 @@ Route::prefix('api')
         Route::apiResources([
             'voucherClass' => VoucherClassController::class,
             'currency'              => CurrencyController::class,
+            'condicionIva' => CondicionIvaController::class,
             'concepto' => ConceptoController::class,
             'identificationClass'         => IdentificationClassController::class
         ]);

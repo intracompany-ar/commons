@@ -2,6 +2,4 @@
 
 namespace IntraCompany\Commons\Http\Controllers;
 
-abstract class Controller
-{
-}
+abstract class Controller{}

@@ -15,6 +15,11 @@ class Company extends Model
 
     protected $guarded = ['id'];
 
+    public function condicionIva(): BelongsTo
+    {
+        return $this->belongsTo(CondicionIva::class);
+    }
+    
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
