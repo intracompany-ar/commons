@@ -76,7 +76,7 @@
             data-version-backend="{{ json_decode(file_get_contents(base_path('composer.json')), true)['version'] }}"
             
             data-breadcrumb="@yield('breadcrumb')"
-            data-current-route-name="{{ Route::currentRouteName() }}"
+            
             data-saludo="{{ __('Hello') }}"
             
             data-menus-backend="{{ isset($menus) ? json_encode($menus) : null }}"
