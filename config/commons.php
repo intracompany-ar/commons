@@ -45,7 +45,7 @@ return [
 
     'footer_position_fixed' => true,
 
-    'chat' => true,
+    'chat' => env('APP_ENV', 'pruduction'),
 
     'og_image_path' => 'https://www.fate.com.ar/assets/img/pininfarinasport.jpg',
 
