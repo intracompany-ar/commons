@@ -66,10 +66,6 @@ class CommonsServiceProvider extends ServiceProvider
         ], 'commons:fonts');
 
         $this->publishes([
-            __DIR__.'/../resources/js' => resource_path('vendor/commons'),
-        ], 'commons:js');
-
-        $this->publishes([
             __DIR__.'/../config/commons.php' => config_path('commons.php'),
         ], 'commons:config');
     }
