@@ -14,7 +14,7 @@ class IdentificationClassController extends Controller
      */
     public function index()
     {
-        $rows  = IdentificationClass::all()->toJson();
+        $rows  = IdentificationClass::all();
         return response()->json($rows, 200);
     }
 
