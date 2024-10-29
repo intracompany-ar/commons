@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <title id="title">
-            @yield('title') {{ config('commons.title') }}
+            {{ $companyDepartment ?? '' }} @yield('title') {{ config('commons.title') }}
         </title>
 
         {{-- Antes: config('app.url') --> No funcionan los links a id dentro de la misma página --> Lo cambio por url()->current() --}}
@@ -69,20 +69,17 @@
             
             data-token="{{ session('token') }}"
 
-            data-title="@yield('subtitle')"
+            data-title="{{ $title ?? '' }} @yield('subtitle')"
             data-help="@yield('help')"
             
             data-now-backend="{{ now() }}"
-
             data-version-backend="{{ json_decode(file_get_contents(base_path('composer.json')), true)['version'] }}"
             
             data-breadcrumb="@yield('breadcrumb')"
             
             data-saludo="{{ __('Hello') }}"
-            
-            data-menus-backend="{{ isset($menus) ? json_encode($menus) : null }}"
-            data-historial-backend="{{ isset($historial) ? json_encode($historial) : null }}" 
             data-close-session-label="{{ __('Cerrar sesión') }}" 
+
             data-show-logo="@yield('logo')"            
             data-logo="{{ config('commons.logo.path') }}"
             data-width-logo="{{ config('commons.logo.width') }}" 
@@ -107,6 +104,8 @@
 
         <main> @yield('content') </main>
         
+        <div id="{{ $index_link ?? 'nn' }}"></div>
+        
         {{-- FOOTER --}}
 		<footer class="d-print-none text-light" 
             style="background-color: #6a6c6a; @if(config('commons.footer_position_fixed')) position: fixed; @endif">
@@ -125,5 +124,7 @@
     @stack('scriptsEnd')
     <script>
         window.flash = @json(['front_route' => session('front_route')]);
+        window.subsystemName = '{{ $index_link ?? '' }}';
     </script>
+    @vite(['src/mounter.js'])
 </html>
