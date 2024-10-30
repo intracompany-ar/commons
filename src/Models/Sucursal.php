@@ -14,7 +14,7 @@ class Sucursal extends Model
 
     public $timestamps = false;
 
-    protected $guarded = ['id', 'suc_cx_id']; // suc_cx_id es generada
+    protected $guarded = ['id'];
 
     public function city()
     {
