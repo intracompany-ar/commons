@@ -8,6 +8,6 @@ trait IdentificationClassableCx
 {
     public function identificationClass()
     {
-        return $this->belongsTo(IdentificationClass::class, 'IdTipoDoc', 'IdTipoDocumento_CX');
+        return $this->belongsTo(IdentificationClass::class, 'identification_class_id', 'id_cx');
     }
 }

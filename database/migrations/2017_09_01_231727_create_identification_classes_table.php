@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('description', 50)->nullable();
             $table->string('abbreviation', 6)->nullable();
 
-            $table->smallInteger('IdTipoDocumento_CX')->nullable()->unique();
+            $table->smallInteger('id_cx')->nullable()->unique();
         });
     }
 

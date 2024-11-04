@@ -37,7 +37,7 @@ class IdentificationClassRequest extends FormRequest
                 'max:8',
                 Rule::unique('identification_classes')->ignore($request->id), //Agrego esto porque uso el mismo request para editar y crear. Si edito da error porque esos datos ya existen
             ],
-            'IdTipoDocumento_CX' => [
+            'id_cx' => [
                 'nullable',
                 'integer',
                 'min:1',
