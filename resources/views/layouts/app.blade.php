@@ -79,7 +79,8 @@
             data-width-logo="{{ config('commons.logo.width') }}" 
         ></div>
 
-        <main> @yield('content') </main>
+        {{-- Donde se monta el componente principal --}}
+        <main id="{{ $index_link ?? 'nn' }}"></main>
                 
         {{-- FOOTER --}}
 		<footer class="d-print-none text-light" 
