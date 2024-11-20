@@ -35,10 +35,7 @@
         @auth
             <meta name="auth-id" content="{{ auth()->id() }}">
             <meta name="auth-name" content="{{ auth()->user()->name }}">
-            <meta name="auth-email" content="{{ auth()->user()->email }}">
-            <meta name="person-id" content="{{ auth()->user()->person_id }}">
             <meta name="actualizopassw" content="{{ auth()->user()->actualizopassw }}">
-            <meta name="person-first-name" content="{{ auth()->user()->person?->first_name }}">
             <meta name="profile-photo" content="{{ auth()->user()->profile_photo_url ? auth()->user()->profile_photo_url : asset('storage/img/bib.png') }}">
         @endauth
 
@@ -66,24 +63,7 @@
         @endif
 
         <div id="app" v-cloak
-            
             data-token="{{ session('token') }}"
-
-            data-title="{{ $title ?? '' }} @yield('subtitle')"
-            data-help="@yield('help')"
-            
-            data-now-backend="{{ now() }}"
-            data-version-backend="{{ json_decode(file_get_contents(base_path('composer.json')), true)['version'] }}"
-            
-            data-breadcrumb="@yield('breadcrumb')"
-            
-            data-saludo="{{ __('Hello') }}"
-            data-close-session-label="{{ __('Cerrar sesión') }}" 
-
-            data-show-logo="@yield('logo')"            
-            data-logo="{{ config('commons.logo.path') }}"
-            data-width-logo="{{ config('commons.logo.width') }}" 
-
             data-success ="{{ session('success') ?? null }}"
             data-status ="{{ session('status') ?? null }}"
             data-fail ="{{ session('fail') ?? null }}"
@@ -91,27 +71,21 @@
             data-info ="{{ session('info') ?? null }}"
             data-errors="{{ isset($errors) ? ($errors->any() ? json_encode($errors->all()) : null) : null }}"
 
-            data-auth='{{ json_encode(
-                auth()->user()->load([
-                    'person:id,entity_id,name',
-                    'person.lastEmployment:id,entity_id,sucursal_actual_id',
-                    'person.lastEmployment.sucursalActual:id,name',
-                    'company:id,name,entity_id',
-                ])
-                ->only('id', 'name', 'email', 'person_id', 'profile_photo_url', 'person', 'company')
-            ) }}'
+            data-help="@yield('help')"
+            data-breadcrumb="@yield('breadcrumb')"
+            data-show-logo="@yield('logo')"            
+
+            data-logo="{{ config('commons.logo.path') }}"
+            data-width-logo="{{ config('commons.logo.width') }}" 
         ></div>
 
         <main> @yield('content') </main>
-        
-        <div id="{{ $index_link ?? 'nn' }}"></div>
-        
+                
         {{-- FOOTER --}}
 		<footer class="d-print-none text-light" 
             style="background-color: #6a6c6a; @if(config('commons.footer_position_fixed')) position: fixed; @endif">
 			@yield('footer')
         </footer>
-
 
         {{-- CHAT --}}
         @if(config('commons.chat'))
