@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\{
 use Illuminate\Support\Facades\Cache;
 
 /**
- * De Afip , mismo cod que CX
+ * De ARCA , mismo cod que CX
  *
  * https://www.afip.gob.ar/libro-iva-digital/documentos/Libro-IVA-Digital-Tablas-del-Sistema.pdf
  *
@@ -38,7 +38,7 @@ class Currency extends Model
         parent::boot();
 
         static::addGlobalScope('onlyCommonsCurrencies', function (Builder $builder) {
-            $builder->whereIn('id', config('commons.currency_commons'));
+            $builder->whereIn('id', [2, 3, 4, 13, 14, 20, 22, 48, 58, 63]);
         });
 
         static::addGlobalScope(new OrderByNameScope);

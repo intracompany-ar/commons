@@ -3,7 +3,7 @@
 
 /**
  * Recibe la url firmada de S3 (temporal), retorna el link completo incluyendo el dominio inicial. Se usa para Sección notices del home
- *
+ * NO lo estoy usando, queda para referencia
  */
 if (! function_exists('urlS3Cdn')) {
     function urlS3Cdn($pathS3) {
