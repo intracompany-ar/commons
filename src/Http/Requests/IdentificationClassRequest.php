@@ -24,7 +24,7 @@ class IdentificationClassRequest extends FormRequest
     public function rules(Request $request): array
     {
         return [
-            'afip_id' => [
+            'arca_id' => [
                 'nullable',
                 'integer',
                 'min:1',
