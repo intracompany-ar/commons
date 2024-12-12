@@ -2,14 +2,12 @@
 
 namespace IntraCompany\Commons\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use IntraCompany\Commons\Traits\UserRoles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Cache;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -46,11 +44,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Application::class, 'user_applications');
     }
 
-    public function person(): BelongsTo
-    {
-        return $this->belongsTo(Person::class);
-    }
-
     /**
      * Es la por default, la uso para asignar selects por ejemplo
      * TODO: columna pivot para indicar cuál es la default, por ahora toma la primera que encuentra
@@ -61,14 +54,14 @@ class User extends Authenticatable
     }
 
 
-    /**
-     * Si el usuario tiene una person, esa person tiene un employment, toma la sucursal actual de ese employment.
+       /**
+     * Si el usuario tiene una entidad, esa entidad tiene un employment, toma la sucursal actual de ese employment.
      */
     public function sucursalActual(): bool
     {
-        if ($this->hasPerson()) {
-            if ($this->person()->first()->hasEmployment()) {
-                return $this->person()->first()->lastEmployment()->first()->sucursal_actual_id;
+        if ($this->hasEntity()) {
+            if ($this->entity()->first()->hasEmployment()) {
+                return $this->entity()->first()->lastEmployment()->first()->sucursal_actual_id;
             }
 
             return false;
@@ -80,9 +73,9 @@ class User extends Authenticatable
     /**
      * Querys
      */
-    public function hasPerson(): bool
+    public function hasEntity(): bool
     {
-        return ! is_null($this->person_id);
+        return ! is_null($this->entity_id);
     }
 
     public function isActive()
