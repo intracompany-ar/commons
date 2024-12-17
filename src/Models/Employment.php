@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Son empleos, una persona puede tener n empleos en diferentes entity_id, o haberse ido y luego refresado a la misma empresa
+ * Son empleos, una persona puede tener n empleos en diferentes tributary_id, o haberse ido y luego refresado a la misma empresa
  */
 class Employment extends Model
 {

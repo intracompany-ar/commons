@@ -21,13 +21,13 @@ class Company extends Model
     public function nroDocGuiones(): Attribute
     {
         return Attribute::make(
-            get: fn ($value, $attributes) => isset($attributes['entity_id']) ? (strlen($attributes['entity_id']) == 11
+            get: fn ($value, $attributes) => isset($attributes['tributary_id']) ? (strlen($attributes['tributary_id']) == 11
                 ?
-                substr($attributes['entity_id'], 0, 2).'-'.
-                substr($attributes['entity_id'], 2, 8).'-'.
-                substr($attributes['entity_id'], 10, 1)
+                substr($attributes['tributary_id'], 0, 2).'-'.
+                substr($attributes['tributary_id'], 2, 8).'-'.
+                substr($attributes['tributary_id'], 10, 1)
                 :
-                $attributes['entity_id']
+                $attributes['tributary_id']
             ) : null
         );
     }

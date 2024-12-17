@@ -50,11 +50,11 @@ class User extends Authenticatable
      */
     public function company(): BelongsToMany
     {
-        return $this->belongsToMany(Company::class, 'company_user', 'user_id', 'entity_id', 'id', 'entity_id')->limit(1);
+        return $this->belongsToMany(Company::class, 'company_user', 'user_id', 'tributary_id', 'id', 'tributary_id')->limit(1);
     }
 
 
-       /**
+    /**
      * Si el usuario tiene una entidad, esa entidad tiene un employment, toma la sucursal actual de ese employment.
      */
     public function sucursalActual(): bool
