@@ -2,7 +2,7 @@
     "name": "intracompany-ar/commons",
     "description": "Herramientas comunes para demás sistemas",
     "type": "library",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "autoload": {
         "files": [
             "src/helpers.php"
@@ -25,7 +25,6 @@
         "php": "^8.2||^8.3",
         "nesbot/carbon": "^2.0||^3.1.1",
         "guzzlehttp/guzzle": "^7.8.1",
-        "intracompany-ar/geography": "^1.1",
         "laravel/sanctum": "^4.0"
     },
     "require-dev": {
@@ -37,11 +36,5 @@
                 "IntraCompany\\Commons\\CommonsServiceProvider"
             ]
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:intracompany-ar/geography.git"
-        }
-    ]
+    }
 }

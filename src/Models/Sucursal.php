@@ -4,7 +4,6 @@ namespace IntraCompany\Commons\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use IntraCompany\Commons\Traits\Companyable;
-use IntraCompany\Geography\Models\City;
 
 class Sucursal extends Model
 {
@@ -16,8 +15,4 @@ class Sucursal extends Model
 
     protected $guarded = ['id'];
 
-    public function city()
-    {
-        return $this->belongsTo(City::class);
-    }
 }

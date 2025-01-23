@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use IntraCompany\Commons\Traits\IdentificationClassable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use IntraCompany\Geography\Models\City;
 
 class Company extends Model
 {
@@ -36,11 +35,6 @@ class Company extends Model
     public function condicionIva(): BelongsTo
     {
         return $this->belongsTo(CondicionIva::class);
-    }
-    
-    public function city(): BelongsTo
-    {
-        return $this->belongsTo(City::class);
     }
 
 }
