@@ -34,10 +34,6 @@ class CommonsServiceProvider extends ServiceProvider
             $this->foreignIdFor(User::class, 'created_by')->constrained()->restrictOnDelete()->cascadeOnUpdate();
         });
 
-        /**
-         * Agrego validator de recaptcha
-         */
-        Validator::extend( 'recaptcha', 'IntraCompany\Commons\\Rules\\ReCaptcha@passes' );
     }
 
 }
