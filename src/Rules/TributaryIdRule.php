@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 
 class TributaryIdRule implements ValidationRule
 {
-    const MAX_DU = 80999999;
+    const MAX_DU = 99999999;
 
     const MIN_DU = 1000000;
 
