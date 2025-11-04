@@ -19,7 +19,9 @@ trait CreatedByCreatingEvent
          * EVENTS
          */
         self::creating( function ($model) {// Se podría hacer con Event y Listener, pero cuando es algo simple más fácil acá
-            $model->created_by = auth()->id();
+            if (blank($model->created_by)) { // Me permite sobreescribir el created_by si quiero, cuando hago el Model::create([...aca creatd_by=>x...])
+                $model->created_by = auth()->id();
+            }
         });
     }
 }
