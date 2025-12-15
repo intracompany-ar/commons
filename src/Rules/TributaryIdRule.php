@@ -7,9 +7,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 
 class TributaryIdRule implements ValidationRule
 {
-    const MAX_DU = config('commons.tributaryIdRule.max_du', 99999999);
-
-    const MIN_DU = config('commons.tributaryIdRule.min_du', 1000000);
+    
 
     /**
      * Run the validation rule.
@@ -69,7 +67,7 @@ class TributaryIdRule implements ValidationRule
         $duSoloNumeros = preg_replace('/[^0-9-]/', '', $duConSimbolos);
         $du = $duSoloNumeros;
 
-        if ($duSoloNumeros > self::MAX_DU || $duSoloNumeros < self::MIN_DU) {
+        if ($duSoloNumeros > config('commons.tributaryIdRule.max_du', 99999999) || $duSoloNumeros < config('commons.tributaryIdRule.min_du', 1000000)) {
             return false;
         }
 
