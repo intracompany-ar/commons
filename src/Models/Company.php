@@ -3,14 +3,11 @@
 namespace IntraCompany\Commons\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use IntraCompany\Commons\Traits\IdentificationClassable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Company extends Model
 {
-    use IdentificationClassable;
-
     public $timestamps = false;
 
     protected $guarded = ['id'];
@@ -36,5 +33,4 @@ class Company extends Model
     {
         return $this->belongsTo(CondicionIva::class);
     }
-
 }

@@ -1,7 +1,6 @@
 <?php
 
 use IntraCompany\Commons\Http\Controllers\CurrencyController;
-use IntraCompany\Commons\Http\Controllers\IdentificationClassController;
 use IntraCompany\Commons\Http\Controllers\CondicionIvaController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +18,5 @@ Route::prefix('api')
         Route::apiResources([
             'currency'              => CurrencyController::class,
             'condicionIva' => CondicionIvaController::class,
-            
-            'identificationClass'         => IdentificationClassController::class
         ]);
     });
